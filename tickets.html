@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickets — Berliner Salon</title>
+  <meta name="description" content="Sichere dir dein Ticket für die nächsten Berliner Salon Events.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Berliner <span>Salon</span></a>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="tischpatinnen.html">Tischpat:innen</a></li>
+        <li><a href="spenden.html">Spenden</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="tickets.html" class="is-active">Tickets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="container" style="padding-block: var(--space-xl) var(--space-lg);">
+    <span class="eyebrow">Tickets</span>
+    <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem);">Platz am Tisch reservieren</h1>
+    <p class="text-lead">
+      Für die meisten Salon-Abende ist der Eintritt frei — bei Benefiz-
+      Events bitten wir um einen Beitrag, der direkt den Projekten zugutekommt.
+    </p>
+  </section>
+
+  <!-- ==========================================================
+       TICKET-KATEGORIEN
+       Drei Preisstufen als Karten. Die mittlere Karte ist optisch
+       hervorgehoben (empfohlene Option) — ein gängiges, aber hier
+       sinnvolles Muster, weil es Besucher:innen echte Orientierung gibt.
+       ========================================================== -->
+  <section class="container section" style="padding-top: var(--space-md);">
+    <div class="grid grid-3">
+
+      <div class="card">
+        <span class="badge">Salon-Abend</span>
+        <h3 style="margin-top: var(--space-sm);">Frei</h3>
+        <p style="font-family: var(--font-display); font-size: 2rem; margin-block: var(--space-xs);">0 €</p>
+        <p>Offene Kennenlernabende — Anmeldung nötig, da die Plätze
+           begrenzt sind.</p>
+        <a href="#ticket-form" class="btn btn-outline" style="margin-top: var(--space-md); width:100%; justify-content:center;">Platz reservieren</a>
+      </div>
+
+      <!-- Hervorgehobene, "empfohlene" Karte -->
+      <div class="card" style="border: 2px solid var(--color-yellow); background-color: var(--color-bg-alt);">
+        <span class="badge">Herbst-Dinner</span>
+        <h3 style="margin-top: var(--space-sm);">Standard</h3>
+        <p style="font-family: var(--font-display); font-size: 2rem; margin-block: var(--space-xs);">25 €</p>
+        <p>Dreigängiges Dinner mit den Tischpat:innen, Erlös fließt
+           vollständig in die Winterküche.</p>
+        <a href="#ticket-form" class="btn btn-primary" style="margin-top: var(--space-md); width:100%; justify-content:center;">Platz reservieren</a>
+      </div>
+
+      <div class="card">
+        <span class="badge">Herbst-Dinner</span>
+        <h3 style="margin-top: var(--space-sm);">Unterstützer:in</h3>
+        <p style="font-family: var(--font-display); font-size: 2rem; margin-block: var(--space-xs);">50 €</p>
+        <p>Wie Standard, plus ein zusätzlicher Beitrag, der zwei
+           weiteren Gästen einen freien Platz ermöglicht.</p>
+        <a href="#ticket-form" class="btn btn-outline" style="margin-top: var(--space-md); width:100%; justify-content:center;">Platz reservieren</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TICKET-FORMULAR
+       Auch hier wieder: reines Frontend-Formular ohne Backend/
+       Zahlungsanbieter. Für echten Ticketverkauf müsstest du das
+       an einen Dienst wie Stripe Checkout, Eventbrite oder ein
+       eigenes Backend anbinden (siehe "action" im <form>-Tag).
+       ========================================================== -->
+  <section class="section section-alt" id="ticket-form">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 1fr 1fr; align-items:start;">
+        <div>
+          <span class="eyebrow">Reservierung</span>
+          <h2>Deine Angaben</h2>
+          <p class="text-lead">Du erhältst dein Ticket per E-Mail als
+             PDF mit QR-Code zum Einlass.</p>
+        </div>
+
+        <form class="form card">
+          <div>
+            <label for="event-select">Event</label>
+            <select id="event-select" name="event-select" required>
+              <option value="">Bitte wählen …</option>
+              <option value="willkommen">14. Aug — Erster Tisch: Willkommen im Salon</option>
+              <option value="pflegetag">22. Aug — Stadtgarten-Pflegetag</option>
+              <option value="sprachcafe">05. Sep — Offenes Sprachcafé Wedding</option>
+              <option value="dinner">19. Sep — Herbst-Dinner der Tischpat:innen</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="ticket-name">Name</label>
+              <input type="text" id="ticket-name" name="ticket-name" placeholder="Vor- und Nachname" required>
+            </div>
+            <div>
+              <label for="ticket-count">Anzahl Plätze</label>
+              <input type="number" id="ticket-count" name="ticket-count" min="1" max="6" value="1" required>
+            </div>
+          </div>
+
+          <div>
+            <label for="ticket-email">E-Mail</label>
+            <input type="email" id="ticket-email" name="ticket-email" placeholder="du@beispiel.de" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: var(--space-sm);">Ticket anfragen</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Berliner Salon</h4>
+          <p style="color:#D8D2C4; max-width: 32ch;">
+            Eine Plattform, die Berliner:innen und ehrenamtliche
+            Projekte an einen Tisch bringt.
+          </p>
+        </div>
+        <div>
+          <h4>Seite</h4>
+          <a href="tischpatinnen.html">Tischpat:innen</a>
+          <a href="spenden.html">Spenden</a>
+          <a href="events.html">Events</a>
+          <a href="community.html">Community</a>
+          <a href="tickets.html">Tickets</a>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <a href="mailto:hallo@berliner-salon.de">hallo@berliner-salon.de</a>
+          <a href="#">Instagram</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Berliner Salon</span>
+        <span>Impressum · Datenschutz</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

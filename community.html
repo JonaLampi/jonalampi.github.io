@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community — Berliner Salon</title>
+  <meta name="description" content="Werde Teil der Berliner Salon Community — Erfahrungsberichte, Austausch und Newsletter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Berliner <span>Salon</span></a>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="tischpatinnen.html">Tischpat:innen</a></li>
+        <li><a href="spenden.html">Spenden</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="community.html" class="is-active">Community</a></li>
+        <li><a href="tickets.html">Tickets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="container" style="padding-block: var(--space-xl) var(--space-lg);">
+    <span class="eyebrow">Community</span>
+    <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem);">Eine Nachbarschaft, die wächst.</h1>
+    <p class="text-lead">
+      Berliner Salon lebt von den Menschen, die mitmachen. Hier erzählen
+      sie, warum sie sich engagieren — und wie du dazustoßen kannst.
+    </p>
+  </section>
+
+  <!-- ==========================================================
+       ERFAHRUNGSBERICHTE
+       Nutzt die .quote-Klasse für hervorgehobene Zitate.
+       ========================================================== -->
+  <section class="container section" style="padding-top: var(--space-md);">
+    <div class="grid">
+      <div class="card">
+        <blockquote class="quote">„Ich kannte niemanden in Berlin — nach dem ersten Salon-Abend hatte ich fünf neue Nummern im Handy."</blockquote>
+        <p style="color: var(--color-ink-soft);">— Mira, seit 2024 im Sprachcafé Wedding</p>
+      </div>
+      <div class="card">
+        <blockquote class="quote">„Als Tischpatin merke ich jede Woche, wie viel ein offenes Ohr bewirken kann."</blockquote>
+        <p style="color: var(--color-ink-soft);">— Aylin, Tischpatin Neukölln</p>
+      </div>
+      <div class="card">
+        <blockquote class="quote">„Zwei Stunden im Monat im Stadtgarten — mehr Zeit hatte ich nicht, und das war genug."</blockquote>
+        <p style="color: var(--color-ink-soft);">— Ben, Stadtgarten Kreuzberg</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       ENGAGEMENT-BEREICHE
+       Übersicht, in welchen Themenfeldern man mitmachen kann.
+       ========================================================== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Themenfelder</span>
+        <h2>Wo möchtest du dich einbringen?</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card card--tilt-left">
+          <span class="badge">Nachbarschaft</span>
+          <h3 style="margin-top: var(--space-sm);">Alltagshilfe</h3>
+          <p>Einkaufen, Behördengänge, kleine Reparaturen — für
+             Nachbar:innen, die Unterstützung brauchen.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Bildung</span>
+          <h3 style="margin-top: var(--space-sm);">Sprache & Lernen</h3>
+          <p>Sprachcafés, Hausaufgabenhilfe und Lesepatenschaften
+             für Kinder und Erwachsene.</p>
+        </div>
+        <div class="card card--tilt-right">
+          <span class="badge">Umwelt</span>
+          <h3 style="margin-top: var(--space-sm);">Grüne Kieze</h3>
+          <p>Stadtgärten pflegen, Müll sammeln, Fahrräder reparieren
+             und weitergeben.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       NEWSLETTER-ANMELDUNG
+       Auch hier: reines Frontend-Formular, siehe Kommentar auf
+       der Spendenseite — für echten Versand braucht es einen
+       Newsletter-Anbieter (z. B. Mailchimp, Brevo) im Hintergrund.
+       ========================================================== -->
+  <section class="container section">
+    <div class="card" style="text-align:center; padding: var(--space-xl);">
+      <h2>Bleib auf dem Laufenden</h2>
+      <p class="text-lead" style="margin-inline:auto; margin-bottom: var(--space-lg);">
+        Einmal im Monat: neue Projekte, Termine und Geschichten aus
+        dem Salon — direkt in dein Postfach.
+      </p>
+      <form class="form" style="flex-direction: row; margin-inline:auto; max-width: 480px;">
+        <input type="email" placeholder="deine@email.de" aria-label="E-Mail-Adresse" required>
+        <button type="submit" class="btn btn-primary">Anmelden</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Berliner Salon</h4>
+          <p style="color:#D8D2C4; max-width: 32ch;">
+            Eine Plattform, die Berliner:innen und ehrenamtliche
+            Projekte an einen Tisch bringt.
+          </p>
+        </div>
+        <div>
+          <h4>Seite</h4>
+          <a href="tischpatinnen.html">Tischpat:innen</a>
+          <a href="spenden.html">Spenden</a>
+          <a href="events.html">Events</a>
+          <a href="community.html">Community</a>
+          <a href="tickets.html">Tickets</a>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <a href="mailto:hallo@berliner-salon.de">hallo@berliner-salon.de</a>
+          <a href="#">Instagram</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Berliner Salon</span>
+        <span>Impressum · Datenschutz</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

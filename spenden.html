@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spenden — Berliner Salon</title>
+  <meta name="description" content="Unterstütze ehrenamtliche Projekte in Berlin mit einer Spende — einmalig oder monatlich.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Berliner <span>Salon</span></a>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="tischpatinnen.html">Tischpat:innen</a></li>
+        <li><a href="spenden.html" class="is-active">Spenden</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="tickets.html">Tickets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="container" style="padding-block: var(--space-xl) var(--space-lg);">
+    <span class="eyebrow">Spenden</span>
+    <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem);">Deck den Tisch mit — auch ohne Zeit.</h1>
+    <p class="text-lead">
+      Nicht jede Unterstützung braucht Ehrenamt vor Ort. Mit einer Spende
+      finanzierst du Räume, Material und Fahrtkosten unserer Projekte.
+    </p>
+  </section>
+
+  <!-- ==========================================================
+       SPENDENZIEL MIT FORTSCHRITTSBALKEN
+       Die Prozentzahl unten (68%) ist ein Platzhalter — verbinde
+       sie später z. B. mit deinem Zahlungsanbieter, um den echten
+       Spendenstand automatisch anzuzeigen.
+       ========================================================== -->
+  <section class="container" style="padding-bottom: var(--space-xl);">
+    <div class="card">
+      <span class="badge">Aktuelle Kampagne</span>
+      <h3 style="margin-top: var(--space-sm);">Winterküche für das Sprachcafé Wedding</h3>
+      <p style="color: var(--color-ink-soft); margin-bottom: var(--space-sm);">
+        13.600 € von 20.000 € Ziel gesammelt
+      </p>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" style="width: 68%;"></div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-ink-soft);">68 % erreicht · noch 42 Tage</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SPENDENFORMULAR
+       WICHTIG: Dies ist reines Frontend — es verarbeitet noch keine
+       echten Zahlungen! Für echte Spenden brauchst du einen
+       Zahlungsanbieter (z. B. Stripe, PayPal, Betterplace) und ein
+       Backend, das dieses Formular entgegennimmt. Das <form>
+       sendet aktuell nirgendwo hin (kein "action"-Attribut).
+       ========================================================== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 1.1fr 0.9fr; align-items: start;">
+
+        <!-- Linke Spalte: das eigentliche Formular -->
+        <div class="card">
+          <h2 style="font-size: 1.8rem;">Jetzt spenden</h2>
+
+          <!-- Umschalter Einmalig / Monatlich, rein optisch mit Buttons -->
+          <div class="donation-amounts" role="group" aria-label="Spendenrhythmus wählen">
+            <button type="button" class="donation-amount is-selected">Einmalig</button>
+            <button type="button" class="donation-amount">Monatlich</button>
+          </div>
+
+          <!-- Betragsauswahl -->
+          <p style="font-weight:600; margin-top: var(--space-md);">Betrag wählen</p>
+          <div class="donation-amounts">
+            <button type="button" class="donation-amount">10 €</button>
+            <button type="button" class="donation-amount is-selected">25 €</button>
+            <button type="button" class="donation-amount">50 €</button>
+            <button type="button" class="donation-amount">100 €</button>
+          </div>
+
+          <form class="form" style="max-width: 100%; margin-top: var(--space-md);">
+            <div>
+              <label for="amount-custom">Eigener Betrag (optional)</label>
+              <input type="number" id="amount-custom" name="amount-custom" placeholder="z. B. 35" min="1">
+            </div>
+            <div>
+              <label for="donor-name">Name</label>
+              <input type="text" id="donor-name" name="donor-name" placeholder="Vor- und Nachname" required>
+            </div>
+            <div>
+              <label for="donor-email">E-Mail</label>
+              <input type="email" id="donor-email" name="donor-email" placeholder="du@beispiel.de" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top: var(--space-sm);">Spende abschließen</button>
+            <p style="font-size: 0.8rem; color: var(--color-ink-soft);">
+              Du wirst danach zu unserem Zahlungsanbieter weitergeleitet
+              (noch nicht angebunden — siehe Code-Kommentar).
+            </p>
+          </form>
+        </div>
+
+        <!-- Rechte Spalte: alternative Wege zu spenden -->
+        <div class="card" style="background-color: var(--color-bg-alt);">
+          <h3>Lieber per Überweisung?</h3>
+          <p style="margin-block: var(--space-sm);">
+            Auch das ist möglich — nutze einfach diese Bankverbindung:
+          </p>
+          <p style="line-height: 1.9;">
+            <strong>Empfänger:</strong> Berliner Salon e. V.<br>
+            <strong>IBAN:</strong> DE00 0000 0000 0000 0000 00<br>
+            <strong>Verwendungszweck:</strong> Winterküche
+          </p>
+          <hr style="border: none; border-top: 1px solid var(--color-line); margin-block: var(--space-md);">
+          <h3>Spendenquittung</h3>
+          <p style="margin-top: var(--space-sm);">
+            Ab 50 € stellen wir automatisch eine Spendenquittung aus —
+            du erhältst sie per E-Mail nach Zahlungseingang.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HÄUFIGE FRAGEN -->
+  <section class="container section">
+    <div class="section-head">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2>Gut zu wissen</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Wofür wird meine Spende genutzt?</h3>
+        <p>Zu 100 % für laufende Projekte — Material, Mietkosten
+           für Treffpunkte und Fahrtkostenerstattung für Ehrenamtliche.</p>
+      </div>
+      <div class="card">
+        <h3>Kann ich meine Spende monatlich geben?</h3>
+        <p>Ja — wähle oben einfach "Monatlich" statt "Einmalig".
+           Du kannst jederzeit formlos per E-Mail kündigen.</p>
+      </div>
+      <div class="card">
+        <h3>Ist Berliner Salon gemeinnützig?</h3>
+        <p>Ja, wir sind als eingetragener Verein (e. V.) anerkannt
+           gemeinnützig — Spenden sind steuerlich absetzbar.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Berliner Salon</h4>
+          <p style="color:#D8D2C4; max-width: 32ch;">
+            Eine Plattform, die Berliner:innen und ehrenamtliche
+            Projekte an einen Tisch bringt.
+          </p>
+        </div>
+        <div>
+          <h4>Seite</h4>
+          <a href="tischpatinnen.html">Tischpat:innen</a>
+          <a href="spenden.html">Spenden</a>
+          <a href="events.html">Events</a>
+          <a href="community.html">Community</a>
+          <a href="tickets.html">Tickets</a>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <a href="mailto:hallo@berliner-salon.de">hallo@berliner-salon.de</a>
+          <a href="#">Instagram</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Berliner Salon</span>
+        <span>Impressum · Datenschutz</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

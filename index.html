@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berliner Salon — Ehrenamt in Berlin</title>
+  <meta name="description" content="Berliner Salon bringt Menschen und Ehrenamt in Berlin an einen Tisch: Projekte finden, spenden, Events besuchen, Community werden.">
+
+  <!-- Google Fonts: Fraunces (Überschriften) + Space Grotesk (Fließtext) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Das gemeinsame Stylesheet für die ganze Website -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================
+       HEADER / NAVIGATION
+       Dieser Block ist auf jeder Unterseite identisch — nur die
+       Klasse "is-active" wandert jeweils zum aktuellen Menüpunkt.
+       Neue Unterseite hinzufügen? Einfach eine <li> ergänzen,
+       hier UND in den Kopien auf den anderen Seiten.
+       ========================================================== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Berliner <span>Salon</span></a>
+
+      <!-- Hamburger-Button, nur auf schmalen Bildschirmen sichtbar -->
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="is-active">Start</a></li>
+        <li><a href="tischpatinnen.html">Tischpat:innen</a></li>
+        <li><a href="spenden.html">Spenden</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="tickets.html">Tickets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- ==========================================================
+       HERO
+       Großer Aufmacher: Versprechen der Seite + zwei Haupt-Aktionen.
+       ========================================================== -->
+  <section class="hero container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Ehrenamt in Berlin</span>
+        <h1>Wo Berlin sich an einen Tisch setzt.</h1>
+        <p class="text-lead">
+          Berliner Salon bringt Menschen zusammen, die etwas bewegen wollen —
+          als Ehrenamtliche, Spender:innen oder Gäste. Finde ein Projekt,
+          das zu dir passt, und werde Teil einer wachsenden Nachbarschaft.
+        </p>
+        <div class="hero-actions">
+          <a href="community.html" class="btn btn-primary">Ehrenamt finden</a>
+          <a href="spenden.html" class="btn btn-outline">Jetzt spenden</a>
+        </div>
+      </div>
+
+      <!-- Signatur-Element der Seite: ein Tischgedeck von oben,
+           passend zum "Salon"-Gedanken — als reines, leichtes SVG. -->
+      <div class="hero-motif" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="190" style="fill:var(--color-bg-alt)" />
+          <circle cx="200" cy="200" r="150" style="fill:none;stroke:var(--color-yellow);stroke-width:2" />
+          <circle cx="200" cy="200" r="110" style="fill:var(--color-card)" />
+          <circle cx="200" cy="200" r="70" style="fill:var(--color-yellow)" />
+          <!-- kleine "Sitzplätze" rund um den Tisch -->
+          <circle cx="200" cy="35" r="12" style="fill:var(--color-petrol)" />
+          <circle cx="365" cy="200" r="12" style="fill:var(--color-ink)" />
+          <circle cx="200" cy="365" r="12" style="fill:var(--color-petrol)" />
+          <circle cx="35" cy="200" r="12" style="fill:var(--color-ink)" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       STATISTIKEN
+       Kurze Zahlen, die Vertrauen schaffen ("social proof").
+       ========================================================== -->
+  <section class="container section" style="padding-block: var(--space-xl);">
+    <div class="grid grid-3">
+      <div class="stat">
+        <span class="stat-number">1.240</span>
+        <span class="stat-label">aktive Ehrenamtliche</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">86</span>
+        <span class="stat-label">laufende Projekte</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">12</span>
+        <span class="stat-label">Berliner Bezirke</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       SO FUNKTIONIERT'S
+       Eine echte Reihenfolge von Schritten — deshalb ist eine
+       Nummerierung hier sinnvoll (anders als bei reinen Deko-Zahlen).
+       ========================================================== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">So funktioniert's</span>
+        <h2>Drei Schritte zum Mitmachen</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <span class="badge">Schritt 1</span>
+          <h3 style="margin-top: var(--space-sm);">Projekt finden</h3>
+          <p>Stöbere durch Projekte aus Nachbarschaft, Bildung, Umwelt
+             und Kultur — gefiltert nach Bezirk und Zeitaufwand.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Schritt 2</span>
+          <h3 style="margin-top: var(--space-sm);">Tischpat:in kennenlernen</h3>
+          <p>Jedes Projekt hat eine feste Ansprechperson — deine
+             Tischpatin oder deinen Tischpaten — für den ersten Kontakt.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Schritt 3</span>
+          <h3 style="margin-top: var(--space-sm);">Platz nehmen</h3>
+          <p>Beim nächsten Event oder Einsatz bist du dabei — ganz ohne
+             Vorerfahrung, mit Menschen, die genauso neugierig sind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       TISCHPAT:INNEN-VORSCHAU
+       Drei Beispiel-Karten, verlinkt auf die volle Übersichtsseite.
+       Die Karten sind leicht gedreht — das "lose um den Tisch
+       verteilte" Gefühl, das zum Namen der Seite passt.
+       ========================================================== -->
+  <section class="container section">
+    <div class="section-head">
+      <span class="eyebrow">Gesichter des Salons</span>
+      <h2>Unsere Tischpat:innen</h2>
+      <p class="text-lead">Sie eröffnen jeden Tisch, begrüßen neue Gäste
+         und sorgen dafür, dass sich niemand allein fühlt.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card person-card card--tilt-left">
+        <div class="person-avatar" style="background-color:#F5B921;">AM</div>
+        <h3>Aylin Mert</h3>
+        <p style="color: var(--color-ink-soft);">Nachbarschaftshilfe Neukölln</p>
+        <span class="person-table">Tisch 03</span>
+      </div>
+      <div class="card person-card">
+        <div class="person-avatar" style="background-color:#2F5D62; color:#fff;">JW</div>
+        <h3>Jonas Weber</h3>
+        <p style="color: var(--color-ink-soft);">Sprachcafé Wedding</p>
+        <span class="person-table">Tisch 07</span>
+      </div>
+      <div class="card person-card card--tilt-right">
+        <div class="person-avatar" style="background-color:#EADFC0;">SK</div>
+        <h3>Selin Kaya</h3>
+        <p style="color: var(--color-ink-soft);">Stadtgarten Kreuzberg</p>
+        <span class="person-table">Tisch 11</span>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: var(--space-xl);">
+      <a href="tischpatinnen.html" class="btn btn-outline">Alle Tischpat:innen ansehen</a>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       NÄCHSTE EVENTS (Vorschau)
+       ========================================================== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Was ansteht</span>
+        <h2>Nächste Termine</h2>
+      </div>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <div class="card event-card">
+          <div class="event-date">
+            <span class="day">14</span>
+            <span class="month">Aug</span>
+          </div>
+          <div>
+            <span class="badge">Salon-Abend</span>
+            <h3 style="margin-top: var(--space-xs);">Erster Tisch: Willkommen im Salon</h3>
+            <p style="color: var(--color-ink-soft);">Kreuzberg · 19:00 Uhr</p>
+          </div>
+        </div>
+
+        <div class="card event-card">
+          <div class="event-date">
+            <span class="day">22</span>
+            <span class="month">Aug</span>
+          </div>
+          <div>
+            <span class="badge">Mitmachen</span>
+            <h3 style="margin-top: var(--space-xs);">Stadtgarten-Pflegetag</h3>
+            <p style="color: var(--color-ink-soft);">Tempelhof · 10:00 Uhr</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: var(--space-xl);">
+        <a href="events.html" class="btn btn-outline">Zum Eventkalender</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       CTA-BANNER: SPENDEN
+       ========================================================== -->
+  <section class="container section">
+    <div class="card" style="background-color: var(--color-ink); color: var(--color-bg); text-align:center; padding: var(--space-xl);">
+      <h2 style="color: var(--color-bg);">Kein Ehrenamt frei? Dann leih deinen Platz aus.</h2>
+      <p style="max-width: 60ch; margin: var(--space-sm) auto var(--space-lg); color: #D8D2C4;">
+        Jede Spende deckt Materialkosten, Räume und Fahrtkosten unserer
+        Projekte — schon 10&nbsp;€ finanzieren ein Sprachcafé-Treffen.
+      </p>
+      <a href="spenden.html" class="btn btn-primary">Zur Spendenseite</a>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       FOOTER
+       Wie der Header auf jeder Seite identisch.
+       ========================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Berliner Salon</h4>
+          <p style="color:#D8D2C4; max-width: 32ch;">
+            Eine Plattform, die Berliner:innen und ehrenamtliche
+            Projekte an einen Tisch bringt.
+          </p>
+        </div>
+        <div>
+          <h4>Seite</h4>
+          <a href="tischpatinnen.html">Tischpat:innen</a>
+          <a href="spenden.html">Spenden</a>
+          <a href="events.html">Events</a>
+          <a href="community.html">Community</a>
+          <a href="tickets.html">Tickets</a>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <a href="mailto:hallo@berliner-salon.de">hallo@berliner-salon.de</a>
+          <a href="#">Instagram</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Berliner Salon</span>
+        <span>Impressum · Datenschutz</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Kleines JS nur für das mobile Hamburger-Menü -->
+  <script src="js/main.js"></script>
+</body>
+</html>

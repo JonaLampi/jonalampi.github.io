@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tischpat:innen — Berliner Salon</title>
+  <meta name="description" content="Lerne die Tischpat:innen von Berliner Salon kennen — die Gastgeber:innen unserer Ehrenamts-Projekte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER (identisch zu index.html, nur "Tischpat:innen" ist aktiv) -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Berliner <span>Salon</span></a>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="tischpatinnen.html" class="is-active">Tischpat:innen</a></li>
+        <li><a href="spenden.html">Spenden</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="tickets.html">Tickets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SEITEN-HERO: kleiner als auf der Startseite, ohne Grafik-Motiv -->
+  <section class="container" style="padding-block: var(--space-xl) var(--space-lg);">
+    <span class="eyebrow">Die Menschen hinter den Projekten</span>
+    <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem);">Unsere Tischpat:innen</h1>
+    <p class="text-lead">
+      Jede Tischpatin und jeder Tischpate eröffnet einen eigenen "Tisch" —
+      ein Projekt, eine feste Anlaufstelle. Sie beantworten Fragen, zeigen
+      neuen Freiwilligen den Einstieg und sorgen für gute Stimmung.
+    </p>
+  </section>
+
+  <!-- ==========================================================
+       PORTRAIT-RASTER
+       Jede Karte nutzt .person-card. Neue Person hinzufügen?
+       Einfach den ganzen <div class="card person-card ..."> Block
+       kopieren und Initialen, Namen, Projekt & Tischnummer ändern.
+       Die Farb-Kürzel unten (z. B. #F5B921) sind bewusst aus der
+       gleichen warmen Palette gewählt wie der Rest der Seite.
+       ========================================================== -->
+  <section class="container section" style="padding-top: var(--space-md);">
+    <div class="grid grid-3">
+
+      <div class="card person-card card--tilt-left">
+        <div class="person-avatar" style="background-color:#F5B921;">AM</div>
+        <h3>Aylin Mert</h3>
+        <p style="color: var(--color-ink-soft);">Nachbarschaftshilfe Neukölln</p>
+        <span class="person-table">Tisch 03</span>
+      </div>
+
+      <div class="card person-card">
+        <div class="person-avatar" style="background-color:#2F5D62; color:#fff;">JW</div>
+        <h3>Jonas Weber</h3>
+        <p style="color: var(--color-ink-soft);">Sprachcafé Wedding</p>
+        <span class="person-table">Tisch 07</span>
+      </div>
+
+      <div class="card person-card card--tilt-right">
+        <div class="person-avatar" style="background-color:#EADFC0;">SK</div>
+        <h3>Selin Kaya</h3>
+        <p style="color: var(--color-ink-soft);">Stadtgarten Kreuzberg</p>
+        <span class="person-table">Tisch 11</span>
+      </div>
+
+      <div class="card person-card card--tilt-right">
+        <div class="person-avatar" style="background-color:#D99A00; color:#fff;">TB</div>
+        <h3>Tobias Braun</h3>
+        <p style="color: var(--color-ink-soft);">Fahrradwerkstatt Wedding</p>
+        <span class="person-table">Tisch 02</span>
+      </div>
+
+      <div class="card person-card">
+        <div class="person-avatar" style="background-color:#F5B921;">LH</div>
+        <h3>Lena Hoffmann</h3>
+        <p style="color: var(--color-ink-soft);">Seniorenbesuchsdienst Pankow</p>
+        <span class="person-table">Tisch 05</span>
+      </div>
+
+      <div class="card person-card card--tilt-left">
+        <div class="person-avatar" style="background-color:#2F5D62; color:#fff;">RÖ</div>
+        <h3>Rosa Özdemir</h3>
+        <p style="color: var(--color-ink-soft);">Kinderbücherei Moabit</p>
+        <span class="person-table">Tisch 09</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA: selbst Tischpat:in werden -->
+  <section class="section section-alt">
+    <div class="container" style="text-align:center;">
+      <h2>Möchtest du selbst einen Tisch eröffnen?</h2>
+      <p class="text-lead" style="margin-inline:auto;">
+        Wenn du ein eigenes Projekt oder eine Idee mitbringst, unterstützen
+        wir dich bei Räumen, Sichtbarkeit und der ersten Gästeliste.
+      </p>
+      <div style="margin-top: var(--space-lg);">
+        <a href="community.html" class="btn btn-primary">Tischpatin oder Tischpate werden</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (identisch zu index.html) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Berliner Salon</h4>
+          <p style="color:#D8D2C4; max-width: 32ch;">
+            Eine Plattform, die Berliner:innen und ehrenamtliche
+            Projekte an einen Tisch bringt.
+          </p>
+        </div>
+        <div>
+          <h4>Seite</h4>
+          <a href="tischpatinnen.html">Tischpat:innen</a>
+          <a href="spenden.html">Spenden</a>
+          <a href="events.html">Events</a>
+          <a href="community.html">Community</a>
+          <a href="tickets.html">Tickets</a>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <a href="mailto:hallo@berliner-salon.de">hallo@berliner-salon.de</a>
+          <a href="#">Instagram</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Berliner Salon</span>
+        <span>Impressum · Datenschutz</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
