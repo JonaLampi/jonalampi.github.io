@@ -373,7 +373,7 @@ p {
    Jede Karte ist leicht abgerundet und wirft einen weichen Schatten.
    Ein Teil der Karten ist minimal gedreht (rotate), damit die Reihe
    nicht wie ein starres Raster wirkt, sondern wie lose um einen Tisch
-   verteilte Plätze — passend zum Namen "Salon" / "Tischpat:innen".
+   verteilte Plätze — passend zum Namen "Salon" / "Table Captains".
    -------------------------------------------------------------------------- */
 .card {
   background-color: var(--color-card);
@@ -405,7 +405,7 @@ p {
   }
 }
 
-/* Portrait-Karte für "Tischpat:innen" (Table Captains) */
+/* Portrait-Karte für "Table Captains" (Table Captains) */
 .person-card {
   text-align: center;
 }

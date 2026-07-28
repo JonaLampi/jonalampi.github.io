@@ -5,7 +5,7 @@
 ```
 berliner-salon/
 ├── index.html            Landing page (Startseite)
-├── tischpatinnen.html    Table Captains Portraits
+├── tableCaptains.html    Table Captains Portraits
 ├── spenden.html          Spendenseite
 ├── events.html           Eventkalender
 ├── community.html        Community
@@ -39,9 +39,9 @@ sie brauchen keinen Server.
 - **Farben & Schriften**: alle zentral als Variablen ganz oben in
   `css/style.css` definiert (Abschnitt "1. DESIGN-TOKENS"). Willst du
   den Gelbton ändern? Eine Zeile reicht.
-- **Tischpat:innen-Portraits**: aktuell runde Farbkreise mit Initialen
+- **Table Captains-Portraits**: aktuell runde Farbkreise mit Initialen
   (kein echtes Foto nötig, damit die Seite sofort funktioniert). Um
-  echte Fotos einzusetzen, ersetze in `tischpatinnen.html` das
+  echte Fotos einzusetzen, ersetze in `tableCaptains.html` das
   `<div class="person-avatar">...</div>` durch z. B.
   `<img class="person-avatar" src="bilder/aylin.jpg" alt="Aylin Mert">`.
 - **Formulare** (Spenden, Newsletter, Tickets): reines HTML ohne
