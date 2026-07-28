@@ -248,7 +248,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 251, 242, 0.9);
+  background-color: var(--color-line); /* rgba(255, 251, 242, 0.9); */
   backdrop-filter: blur(8px); /* leichter Weichzeichner-Effekt beim Scrollen */
   border-bottom: 1px solid var(--color-line);
 }
@@ -262,7 +262,7 @@ p {
 
 .nav-logo {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -277,7 +277,7 @@ p {
 }
 
 .nav-links a {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--color-ink-soft);
   padding-block: 4px;
