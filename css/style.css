@@ -248,9 +248,9 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--color-line); /* rgba(255, 251, 242, 0.9); */
+  background-color: rgba(255, 251, 242, 0.9); /*var(--color-line); */
   backdrop-filter: blur(8px); /* leichter Weichzeichner-Effekt beim Scrollen */
-  border-bottom: 1px solid var(--color-line);
+  border-bottom: 2px solid var(--color-line);
 }
 
 .nav {
@@ -380,7 +380,7 @@ p {
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   box-shadow: var(--shadow-soft);
-  border: 1px solid var(--color-line);
+  border: 2px solid var(--color-line);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -389,19 +389,18 @@ p {
   box-shadow: var(--shadow-hover);
 }
 
-/* Die "wackelige Tafel"-Optik: jede zweite/dritte Karte bekommt eine
-   minimale Drehung. Nur auf größeren Bildschirmen aktiv, damit es auf
-   dem Handy nicht unruhig wirkt (siehe Media Query unten). */
+/* Karten bekommen beim Hover mehr Fokus statt einer Rotation. */
 @media (min-width: 700px) {
-  .card--tilt-left {
-    transform: rotate(-1.4deg);
-  }
+  .card--tilt-left,
   .card--tilt-right {
-    transform: rotate(1.2deg);
+    transform: translateY(0) scale(1);
   }
+
   .card--tilt-left:hover,
   .card--tilt-right:hover {
-    transform: rotate(0deg) translateY(-4px);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    z-index: 2;
   }
 }
 
@@ -411,21 +410,112 @@ p {
 }
 
 .person-avatar {
-  /* Kreisförmiger Platzhalter mit Initialen statt echtem Foto.
-     So funktioniert die Seite sofort, auch ohne dass du schon
-     Portraitfotos hochgeladen hast — ersetze das <div> später
-     einfach durch ein <img>, falls gewünscht. */
-  width: 96px;
-  height: 96px;
+  width: 180px;
+  height: 180px;
   margin: 0 auto var(--space-sm);
   border-radius: 50%;
+  padding: 4px;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   font-family: var(--font-display);
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--color-ink);
+}
+
+.person-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+}
+
+.candidate-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.candidate-sidebar {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.candidate-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: var(--space-md);
+  border: 4px solid var(--color-yellow);
+}
+
+.candidate-meta {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.candidate-meta .meta-item {
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.candidate-meta .meta-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-petrol);
+  margin-bottom: 0.25rem;
+}
+
+.candidate-content {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+.candidate-content .full-text {
+  font-size: 1.05rem;
+  color: var(--color-ink-soft);
+  max-width: 70ch;
+}
+
+.candidate-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.candidate-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-alt);
+  color: var(--color-petrol);
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .candidate-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 .person-table {

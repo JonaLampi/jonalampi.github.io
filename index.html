@@ -33,11 +33,11 @@
 
       <ul class="nav-links">
         <li><a href="index.html" class="is-active">Start</a></li>
-        <li><a href="tableCaptains.html">Table Captains</a></li>
-        <li><a href="spenden.html">Spenden</a></li>
         <li><a href="events.html">Events</a></li>
+        <li><a href="tableCaptains.html">Table Captains</a></li>
         <li><a href="community.html">Community</a></li>
         <li><a href="tickets.html">Tickets</a></li>
+        <li><a href="spenden.html">Spenden</a></li>
       </ul>
     </nav>
   </header>
@@ -119,15 +119,14 @@
       <div class="grid grid-3">
         <div class="card">
           <span class="badge">Schritt 1</span>
-          <h3 style="margin-top: var(--space-sm);">Projekt finden</h3>
-          <p>Stöbere durch Projekte aus Nachbarschaft, Bildung, Umwelt
-             und Kultur — gefiltert nach Bezirk und Zeitaufwand.</p>
+          <h3 style="margin-top: var(--space-sm);">Table Captains kennenlernen</h3>
+          <p>Komme zu einem unserer Salon Formate und lasse Dich von unseren Table Captains für ihre Projekte begeistern.</p>
         </div>
         <div class="card">
           <span class="badge">Schritt 2</span>
-          <h3 style="margin-top: var(--space-sm);">Table Captains kennenlernen</h3>
-          <p>Jedes Projekt hat eine feste Ansprechperson — deine:n Table Captain
-             — für den ersten Kontakt.</p>
+          <h3 style="margin-top: var(--space-sm);">Projekt finden</h3>
+          <p>Stöbere durch Projekte aus Nachbarschaft, Bildung, Umwelt
+             und Kultur — gefiltert nach Bezirk und Zeitaufwand.</p>
         </div>
         <div class="card">
           <span class="badge">Schritt 3</span>
@@ -154,26 +153,8 @@
          und sorgen dafür, dass sich niemand allein fühlt.</p>
     </div>
 
-    <div class="grid grid-3">
-      <div class="card person-card card--tilt-left">
-        <div class="person-avatar" style="background-color:#F5B921;">AM</div>
-        <h3>Aylin Mert</h3>
-        <p style="color: var(--color-ink-soft);">Nachbarschaftshilfe Neukölln</p>
-        <span class="person-table">Tisch 03</span>
-      </div>
-      <div class="card person-card">
-        <div class="person-avatar" style="background-color:#2F5D62; color:#fff;">JW</div>
-        <h3>Jonas Weber</h3>
-        <p style="color: var(--color-ink-soft);">Sprachcafé Wedding</p>
-        <span class="person-table">Tisch 07</span>
-      </div>
-      <div class="card person-card card--tilt-right">
-        <div class="person-avatar" style="background-color:#EADFC0;">SK</div>
-        <h3>Selin Kaya</h3>
-        <p style="color: var(--color-ink-soft);">Stadtgarten Kreuzberg</p>
-        <span class="person-table">Tisch 11</span>
-      </div>
-    </div>
+    <!-- Previously hardcoded placeholder cards. They are now replaced by the live preview below. -->
+    <div class="grid grid-3" id="featured-table-captains"></div>
 
     <div style="text-align:center; margin-top: var(--space-xl);">
       <a href="tableCaptains.html" class="btn btn-outline">Alle Table Captains ansehen</a>
@@ -274,6 +255,33 @@
       </div>
     </div>
   </footer>
+
+  <script src="js/tableCaptainData.js"></script>
+  <script src="data/tableCaptains/clara.js"></script>
+  <script src="data/tableCaptains/muska.js"></script>
+  <script src="data/tableCaptains/luca.js"></script>
+  <script>
+    function renderFeaturedTableCaptains() {
+      const container = document.getElementById('featured-table-captains');
+      if (!container) return;
+
+      container.innerHTML = getFeaturedTableCaptains().map((person, index) => {
+        const tiltClass = index % 3 === 0 ? 'card--tilt-left' : index % 3 === 2 ? 'card--tilt-right' : '';
+        return `
+          <div class="card person-card ${tiltClass}" onclick="window.location.href='tableCaptainPortrait.html?id=${person.id}'">
+            <div class="person-avatar" style="background-color:#F5B921;">
+              <img src="data/tableCaptains/images/${person.picture}" alt="${person.name}">
+            </div>
+            <h3>${person.name}</h3>
+            <p style="color: var(--color-ink-soft);">${person.shortDescription}</p>
+            <span class="person-table">Tisch ${person.table || 'XX'}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderFeaturedTableCaptains);
+  </script>
 
   <!-- Kleines JS nur für das mobile Hamburger-Menü -->
   <script src="js/main.js"></script>

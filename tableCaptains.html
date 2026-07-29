@@ -8,6 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Load global array first -->
+  <script src="js/tableCaptainData.js"></script>
+
+  <!-- Then load each person's data -->
+  <script src="data/tableCaptains/clara.js"></script>
+  <script src="data/tableCaptains/muska.js"></script>
+  <script src="data/tableCaptains/luca.js"></script>
+
+  <!-- Add new ones here -->
 </head>
 <body>
 
@@ -20,11 +30,11 @@
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Start</a></li>
-        <li><a href="tableCaptains.html" class="is-active">Table Captains</a></li>
-        <li><a href="spenden.html">Spenden</a></li>
         <li><a href="events.html">Events</a></li>
+        <li><a href="tableCaptains.html" class="is-active">Table Captains</a></li>
         <li><a href="community.html">Community</a></li>
         <li><a href="tickets.html">Tickets</a></li>
+        <li><a href="spenden.html">Spenden</a></li>
       </ul>
     </nav>
   </header>
@@ -49,8 +59,34 @@
        gleichen warmen Palette gewählt wie der Rest der Seite.
        ========================================================== -->
   <section class="container section" style="padding-top: var(--space-md);">
-    <div class="grid grid-3">
+    <div class="grid grid-3" id="cards-container"></div>
+    <script>
+      // Generate cards after all data is loaded
+      function renderCards() {
+          const container = document.getElementById('cards-container');
+          if (!container) return;
 
+          container.innerHTML = getAllTableCaptains().map(person => `
+              <div class="card person-card card--tilt-left" onclick="window.location.href='tableCaptainPortrait.html?id=${person.id}'">
+                  <div class="person-avatar" style="background-color:#F5B921;">
+                    <img src="data/tableCaptains/images/${person.picture}" alt="${person.name}">
+                  </div>
+                  <h3>${person.name}</h3>
+                  <p style="color: var(--color-ink-soft);">${person.shortDescription}</p>
+                  <span class="person-table">Tisch ${person.table || 'XX'}</span>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                      <span class="tag company">🏢 ${person.tags.company}</span>
+                      <br>
+                      <span class="tag event">📅 ${person.tags.event}</span>
+                  </div>
+              </div>
+          `).join('');
+        }
+
+        // Run after page loads
+        document.addEventListener('DOMContentLoaded', renderCards);
+    </script>
+      <!--
       <div class="card person-card card--tilt-left">
         <div class="person-avatar" style="background-color:#F5B921;">AM</div>
         <h3>Aylin Mert</h3>
@@ -91,7 +127,7 @@
         <h3>Rosa Özdemir</h3>
         <p style="color: var(--color-ink-soft);">Kinderbücherei Moabit</p>
         <span class="person-table">Tisch 09</span>
-      </div>
+      </div>-->
 
     </div>
   </section>
