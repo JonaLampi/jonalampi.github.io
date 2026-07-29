@@ -344,6 +344,26 @@ p {
   box-shadow: var(--shadow-hover);
 }
 
+.btn-secondary {
+  gap: 0.5rem;
+  padding: 0.85rem 1.7rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  background-color: var(--color-petrol);
+  color: var(--color-ink-);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-secondary:hover {
+  gap: 0.5rem;
+  padding: 0.85rem 1.7rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  background-color: var(--color-petrol-deep);
+}
+
 .btn-outline {
   background-color: transparent;
   border-color: var(--color-ink);
@@ -385,12 +405,13 @@ p {
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: var(--shadow-hover);
+  z-index: 2;
 }
 
 /* Karten bekommen beim Hover mehr Fokus statt einer Rotation. */
-@media (min-width: 700px) {
+/* @media (min-width: 700px) {
   .card--tilt-left,
   .card--tilt-right {
     transform: translateY(0) scale(1);
@@ -402,7 +423,7 @@ p {
     box-shadow: var(--shadow-hover);
     z-index: 2;
   }
-}
+} */
 
 /* Portrait-Karte für "Table Captains" (Table Captains) */
 .person-card {
@@ -445,7 +466,7 @@ p {
 
 .candidate-sidebar {
   background-color: var(--color-card);
-  border: 1px solid var(--color-line);
+  border: 2px solid var(--color-line);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   box-shadow: var(--shadow-soft);
@@ -482,7 +503,7 @@ p {
 
 .candidate-content {
   background-color: var(--color-card);
-  border: 1px solid var(--color-line);
+  border: 2px solid var(--color-line);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   box-shadow: var(--shadow-soft);
@@ -512,6 +533,30 @@ p {
   font-weight: 600;
 }
 
+/* Icon sizing: constrain SVGs to ~60% of the surrounding text height
+   (leaves ~20% space above and below visually). Use inline-flex
+   containers so percentage-like sizing works reliably across elements. */
+.icon {
+  display: inline-block;
+  height: 1.5em; /* ~60% of the current font-size */
+  width: auto;
+  vertical-align: middle;
+}
+
+/* Ensure tags with icons align nicely and the icon doesn't force line-height.
+   Tag links and portrait links size to their text content dynamically. */
+.tags .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.candidate-links a {
+  /* allow link width to match its text content and keep icon aligned */
+  padding: 0.45rem 0.75rem;
+  flex: 0 0 auto;
+}
+
 @media (max-width: 800px) {
   .candidate-layout {
     grid-template-columns: 1fr;
@@ -536,6 +581,23 @@ p {
   display: flex;
   gap: var(--space-md);
   align-items: flex-start;
+}
+
+.detail-list {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.detail-card {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.detail-card h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.1rem;
 }
 
 .event-date {

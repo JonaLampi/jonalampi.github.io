@@ -44,65 +44,7 @@
        gesamten <div class="card event-card"> Block kopieren.
        ========================================================== -->
   <section class="container section" style="padding-top: var(--space-md);">
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));">
-
-      <div class="card event-card">
-        <div class="event-date">
-          <span class="day">14</span>
-          <span class="month">Aug</span>
-        </div>
-        <div>
-          <span class="badge">Salon-Abend</span>
-          <h3 style="margin-top: var(--space-xs);">Erster Tisch: Willkommen im Salon</h3>
-          <p style="color: var(--color-ink-soft); margin-block: 4px;">Kreuzberg · 19:00 Uhr</p>
-          <p>Kennenlernabend für alle, die neu im Ehrenamt sind.</p>
-          <a href="tickets.html" class="btn btn-outline" style="margin-top: var(--space-sm); padding: 0.6rem 1.2rem; font-size: 0.85rem;">Zum Ticket</a>
-        </div>
-      </div>
-
-      <div class="card event-card">
-        <div class="event-date">
-          <span class="day">22</span>
-          <span class="month">Aug</span>
-        </div>
-        <div>
-          <span class="badge">Mitmachen</span>
-          <h3 style="margin-top: var(--space-xs);">Stadtgarten-Pflegetag</h3>
-          <p style="color: var(--color-ink-soft); margin-block: 4px;">Tempelhof · 10:00 Uhr</p>
-          <p>Gemeinsam pflanzen, gießen und den Garten winterfest machen.</p>
-          <a href="tickets.html" class="btn btn-outline" style="margin-top: var(--space-sm); padding: 0.6rem 1.2rem; font-size: 0.85rem;">Zum Ticket</a>
-        </div>
-      </div>
-
-      <div class="card event-card">
-        <div class="event-date">
-          <span class="day">05</span>
-          <span class="month">Sep</span>
-        </div>
-        <div>
-          <span class="badge">Sprachcafé</span>
-          <h3 style="margin-top: var(--space-xs);">Offenes Sprachcafé Wedding</h3>
-          <p style="color: var(--color-ink-soft); margin-block: 4px;">Wedding · 17:00 Uhr</p>
-          <p>Deutsch üben bei Tee und Gebäck — jede:r ist willkommen.</p>
-          <a href="tickets.html" class="btn btn-outline" style="margin-top: var(--space-sm); padding: 0.6rem 1.2rem; font-size: 0.85rem;">Zum Ticket</a>
-        </div>
-      </div>
-
-      <div class="card event-card">
-        <div class="event-date">
-          <span class="day">19</span>
-          <span class="month">Sep</span>
-        </div>
-        <div>
-          <span class="badge">Benefiz</span>
-          <h3 style="margin-top: var(--space-xs);">Herbst-Dinner der Table Captains</h3>
-          <p style="color: var(--color-ink-soft); margin-block: 4px;">Mitte · 18:30 Uhr</p>
-          <p>Ein Abend mit allen Table Captains — Erlös geht an die Winterküche.</p>
-          <a href="tickets.html" class="btn btn-outline" style="margin-top: var(--space-sm); padding: 0.6rem 1.2rem; font-size: 0.85rem;">Zum Ticket</a>
-        </div>
-      </div>
-
-    </div>
+    <div class="grid" id="events-grid" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));"></div>
   </section>
 
   <footer class="site-footer">
@@ -137,6 +79,41 @@
     </div>
   </footer>
 
+  <script src="js/eventData.js"></script>
+  <script src="data/events/salon-china-conversations.js"></script>
+  <script src="data/events/salon-gutes-leadership.js"></script>
+  <script src="data/events/salon-jetzt-ist-die-zeit.js"></script>
+  <script src="data/events/salon-ki-gesellschaft.js"></script>
+  <script>
+    function renderEvents() {
+      const container = document.getElementById('events-grid');
+      if (!container) return;
+
+      container.innerHTML = getAllEvents().map(event => {
+        const date = new Date(event.date);
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = date.toLocaleDateString('de-DE', { month: 'short' }).replace('.', '');
+
+        return `
+          <a class="card event-card" href="eventPortrait.html?id=${event.id}">
+            <div class="event-date">
+              <span class="day">${day}</span>
+              <span class="month">${month}</span>
+            </div>
+            <div>
+              <span class="badge">${event.category}</span>
+              <h3 style="margin-top: var(--space-xs);">${event.title}</h3>
+              <p style="color: var(--color-ink-soft); margin-block: 4px;">${event.location} · ${event.time}</p>
+              <p>${event.description}</p>
+              <span href="tickets.html" class="btn btn-outline" style="margin-top: var(--space-sm);">Zum Ticket</span>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderEvents);
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>

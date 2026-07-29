@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Event-Details — Berliner Salon</title>
+  <meta name="description" content="Mehr Informationen zu den kommenden Veranstaltungen des Berliner Salons.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Berliner <span>Salon</span></a>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="tableCaptains.html">Table Captains</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="tickets.html">Tickets</a></li>
+        <li><a href="spenden.html">Spenden</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container section">
+    <div id="detail-container"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Berliner Salon</h4>
+          <p style="color:#D8D2C4; max-width: 32ch;">Eine Plattform, die Berliner:innen und ehrenamtliche Projekte an einen Tisch bringt.</p>
+        </div>
+        <div>
+          <h4>Seite</h4>
+          <a href="tableCaptains.html">Table Captains</a>
+          <a href="spenden.html">Spenden</a>
+          <a href="events.html">Events</a>
+          <a href="community.html">Community</a>
+          <a href="tickets.html">Tickets</a>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <a href="mailto:hallo@berlinersalon.org">hallo@berlinersalon.org</a>
+          <a href="#">Instagram</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Berliner Salon</span>
+        <span>Impressum · Datenschutz</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/eventData.js"></script>
+  <script src="data/events/salon-china-conversations.js"></script>
+  <script src="data/events/salon-gutes-leadership.js"></script>
+  <script src="data/events/salon-jetzt-ist-die-zeit.js"></script>
+  <script src="data/events/salon-ki-gesellschaft.js"></script>
+  <script>
+    function renderEventDetail() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      const container = document.getElementById('detail-container');
+
+      if (!container) return;
+
+      if (!id) {
+        container.innerHTML = '<p>Kein Event ausgewählt.</p>';
+        return;
+      }
+
+      const event = getAllEvents().find(item => item.id === id);
+
+      if (!event) {
+        container.innerHTML = '<p>Event nicht gefunden.</p>';
+        return;
+      }
+
+      const date = new Date(event.date);
+      const day = date.getDate().toString().padStart(2, '0');
+      const month = date.toLocaleDateString('de-DE', { month: 'short' }).replace('.', '');
+      const weekday = date.toLocaleDateString('de-DE', { weekday: 'short' }).replace('.', '');
+      const formattedDate = `${weekday}, ${day}. ${month}`;
+      const highlightsMarkup = (event.highlights || []).map(item => `
+        <div class="detail-card">
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
+        </div>
+      `).join('');
+
+      container.innerHTML = `
+        <div class="candidate-layout">
+          <aside class="candidate-sidebar">
+            <span class="eyebrow">${event.category}</span>
+            <h1>${event.title}</h1>
+            <p class="text-lead" style="margin-top: var(--space-sm);">${event.description}</p>
+
+            <div class="candidate-meta" style="margin-top: var(--space-lg);">
+              <div class="meta-item">
+                <span class="meta-label">Datum</span>
+                <p>${formattedDate}</p>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Uhrzeit</span>
+                <p>${event.time}</p>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Ort</span>
+                <p>${event.location}</p>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Format</span>
+                <p>${event.format || 'Offener Austausch'}</p>
+              </div>
+            </div>
+
+            <div class="candidate-links">
+              <a href="${event.ticketUrl}">Zur Anmeldung</a>
+              <a href="events.html">Alle Events</a>
+            </div>
+          </aside>
+
+          <section class="candidate-content">
+            <span class="eyebrow">Mehr zum Event</span>
+            <h2>${event.title}</h2>
+            <p class="text-lead" style="margin-bottom: var(--space-lg);">${event.fullDescription || event.description}</p>
+
+            <div class="detail-list">
+              ${highlightsMarkup}
+            </div>
+
+            <div class="detail-card" style="margin-top: var(--space-md);">
+              <h3>Für wen das passend ist</h3>
+              <p>${event.audience || 'Alle, die neugierig auf Begegnung und Austausch sind.'}</p>
+            </div>
+          </section>
+        </div>
+      `;
+    }
+
+    document.addEventListener('DOMContentLoaded', renderEventDetail);
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

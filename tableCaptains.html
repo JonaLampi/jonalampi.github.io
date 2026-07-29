@@ -67,19 +67,19 @@
           if (!container) return;
 
           container.innerHTML = getAllTableCaptains().map(person => `
-              <div class="card person-card card--tilt-left" onclick="window.location.href='tableCaptainPortrait.html?id=${person.id}'">
+              <a class="card person-card card--tilt-left" href="tableCaptainPortrait.html?id=${person.id}">
                   <div class="person-avatar" style="background-color:#F5B921;">
                     <img src="data/tableCaptains/images/${person.picture}" alt="${person.name}">
                   </div>
                   <h3>${person.name}</h3>
                   <p style="color: var(--color-ink-soft);">${person.shortDescription}</p>
                   <span class="person-table">Tisch ${person.table || 'XX'}</span>
-                  <div class="tags" style="margin-top: var(--space-sm);">
-                      <span class="tag company">🏢 ${person.tags.company}</span>
+                    <div class="tags" style="margin-top: var(--space-sm);">
+                      <span class="tag company"><img src="icons/company.svg" alt="Firma" class="icon"> ${person.tags.company}</span>
                       <br>
-                      <span class="tag event">📅 ${person.tags.event}</span>
-                  </div>
-              </div>
+                      <span class="tag event"><img src="icons/calendar.svg" alt="Datum" class="icon"> ${person.tags.event}</span>
+                    </div>
+              </a>
           `).join('');
         }
 
