@@ -435,7 +435,7 @@ p {
   height: 180px;
   margin: 0 auto var(--space-sm);
   border-radius: 50%;
-  padding: 4px;
+  padding: 3px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -533,12 +533,11 @@ p {
   font-weight: 600;
 }
 
-/* Icon sizing: constrain SVGs to ~60% of the surrounding text height
-   (leaves ~20% space above and below visually). Use inline-flex
-   containers so percentage-like sizing works reliably across elements. */
+/* Icon sizing: constrain SVGs to 1.5em of the surrounding text height
+   Use inline-flex containers so percentage-like sizing works reliably across elements. */
 .icon {
   display: inline-block;
-  height: 1.5em; /* ~60% of the current font-size */
+  height: 1.5em; /* 1.5em of the current font-size */
   width: auto;
   vertical-align: middle;
 }
