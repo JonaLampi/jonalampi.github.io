@@ -14,5 +14,5 @@ EVENTS.push({
     { title: 'Programm', description: 'Gemeins essen, sich austauschen und ein kurzes Gespräch zu den Projekten führen.' },
     { title: 'Ziel', description: 'Die Erlöse kommen der Winterküche zugute und stärken die Zusammenarbeit im Netzwerk.' }
   ],
-  ticketUrl: 'tickets.html'
+  // ticketUrl: 'tickets.html'
 });

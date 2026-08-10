@@ -12,5 +12,5 @@ EVENTS.push({
     { title: 'Was wir machen', description: '' },
     { title: 'Nach dem Arbeiten', description: '' }
   ],
-  ticketUrl: 'tickets.html'
+  // ticketUrl: 'tickets.html'
 });

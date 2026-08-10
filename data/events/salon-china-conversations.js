@@ -14,5 +14,5 @@ EVENTS.push({
     { title: 'Was euch erwartet', description: 'Einfache Gesprächsrunden, Tee, Gebäck und viel Raum für spontane Begegnungen.' },
     { title: 'Besonderer Fokus', description: 'Niedrigschwelliger Austausch ohne Druck oder Leistungsdenken.' }
   ],
-  ticketUrl: 'tickets.html'
+  // ticketUrl: 'tickets.html'
 });

@@ -489,14 +489,14 @@ p {
 .candidate-layout {
   display: grid;
   grid-template-columns: minmax(280px, 360px) 1fr;
-  gap: var(--space-md);
+  gap: var(--space-lg);
   align-items: start;
 }
 
 .candidate-left-stack {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: var(--space-lg);
 }
 
 .candidate-sidebar {
