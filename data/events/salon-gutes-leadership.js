@@ -6,6 +6,7 @@ EVENTS.push({
   location: 'Mitte',
   category: 'Salon-Abends',
   description: 'Ein Abend mit allen Table Captains — Erlös geht an die Winterküche.',
+  image: 'data/events/images/event-hero.svg',
   fullDescription: 'Im Mittelpunkt steht ein gemeinsamer Abend mit Geschichten, Austausch und der Unterstützung eines konkreten sozialen Projekts.',
   format: 'Benefizabend',
   audience: 'Für alle, die sich für ein gutes gemeinsames Abendessen und einen guten Zweck interessieren.',

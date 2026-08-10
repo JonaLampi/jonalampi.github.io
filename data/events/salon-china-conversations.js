@@ -6,6 +6,7 @@ EVENTS.push({
   location: 'Wedding',
   category: 'Salon-Abend',
   description: 'China, was können wir Europäer:innen lernen?',
+  image: 'data/events/images/event-hero.svg',
   fullDescription: 'Ein Abend mit Austausch, Diskussion und Begegnung zu den Themen China, Kultur und Gesellschaft. Wir laden alle Interessierten ein, sich in einem offenen Gespräch über die chinesische Kultur und ihre Einflüsse auf unsere Gesellschaft auszutauschen.',
   format: 'Sprachcafé',
   audience: 'Für alle, die Deutsch üben, sich in der Nachbarschaft begegnen oder einfach an einem offenen Nachmittag teilnehmen möchten.',

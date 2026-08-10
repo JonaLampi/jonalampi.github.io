@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="./">
 
   <script src="js/tableCaptainData.js"></script>
   <script src="data/tableCaptains/clara.js"></script>
@@ -120,7 +121,10 @@
               <span class="eyebrow">Table Captain</span>
               <h2>${person.name}</h2>
               <p class="text-lead" style="margin-bottom: var(--space-md);">${person.shortDescription}</p>
-              <div class="full-text">${person.fullText}</div>
+              <div class="full-text">${(person.fullText || '')
+                .replace(/\r\n/g, '\n')
+                .replace(/\n{3,}/g, '\n\n')
+                .replace(/\n/g, '<br>')}</div>
             </section>
           </div>
         `;

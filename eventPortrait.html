@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="./">
 
   <title>Event-Details — Berliner Salon</title>
   <meta name="description" content="Mehr Informationen zu den kommenden Veranstaltungen des Berliner Salons.">
@@ -90,50 +91,110 @@
       const day = date.getDate().toString().padStart(2, '0');
       const month = date.toLocaleDateString('de-DE', { month: 'short' }).replace('.', '');
       const weekday = date.toLocaleDateString('de-DE', { weekday: 'short' }).replace('.', '');
-      const formattedDate = `${weekday}, ${day}. ${month}`;
-      const highlightsMarkup = (event.highlights || []).map(item => `
-        <div class="detail-card">
-          <h3>${item.title}</h3>
-          <p>${item.description}</p>
+      const year = date.getFullYear();
+      const formatDate = (value) => {
+        const d = new Date(value);
+        const dayValue = d.getDate().toString().padStart(2, '0');
+        const monthValue = d.toLocaleDateString('de-DE', { month: 'short' }).replace('.', '');
+        const weekdayValue = d.toLocaleDateString('de-DE', { weekday: 'short' }).replace('.', '');
+        const yearValue = d.getFullYear();
+        return `${weekdayValue}, ${dayValue}. ${monthValue} ${yearValue}`;
+      };
+      const formattedDate = formatDate(event.date);
+      const registrationDeadlineMarkup = event.registrationDeadline ? `
+        <div class="meta-item">
+          <span class="meta-label">Anmeldeschluss</span>
+          <p>${formatDate(event.registrationDeadline)}</p>
         </div>
-      `).join('');
+      ` : '';
+      const formattedFullDescription = (event.fullDescription || event.description)
+        .replace(/\r\n/g, '\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .replace(/\n/g, '<br>');
+      const highlightsMarkup = (event.highlights || []).map(item => {
+        const formattedDescription = (item.description || '')
+          .replace(/\r\n/g, '\n')
+          .replace(/\n{3,}/g, '\n\n')
+          .replace(/\n/g, '<br>');
+
+        return `
+          <div class="detail-card">
+            <h3>${item.title}</h3>
+            <p>${formattedDescription}</p>
+          </div>
+        `;
+      }).join('');
+
+      const sponsorsMarkup = (event.sponsors || [])
+        .slice()
+        .sort((a, b) => (a.order || 0) - (b.order || 0))
+        .map(sponsor => `
+          <a class="sponsor-card" href="${sponsor.url || '#'}" target="_blank" rel="noopener noreferrer">
+            <img src="${sponsor.image}" alt="${sponsor.name}">
+          </a>
+        `)
+        .join('');
+
+      const heroMarkup = event.image ? `
+        <div class="event-portrait">
+          <img src="${event.image}" alt="${event.title}">
+        </div>
+      ` : '';
+
+      const leftColumnMarkup = `
+        <aside class="candidate-sidebar">
+          ${heroMarkup}
+          <span class="eyebrow">${event.category}</span>
+          <h1>${event.title}</h1>
+          <p class="text-lead" style="margin-top: var(--space-sm);">${event.description}</p>
+
+          <div class="candidate-meta" style="margin-top: var(--space-lg);">
+            <div class="meta-item">
+              <span class="meta-label">Datum</span>
+              <p>${formattedDate}</p>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Uhrzeit</span>
+              <p>${event.time}</p>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Ort</span>
+              <p>${event.location}</p>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Format</span>
+              <p>${event.format || 'Offener Austausch'}</p>
+            </div>
+            ${registrationDeadlineMarkup}
+          </div>
+
+          <div class="candidate-links">
+            <a href="${event.ticketUrl}">Zur Anmeldung</a>
+            <a href="events.html">Alle Events</a>
+          </div>
+        </aside>
+      `;
+
+      const sponsorsBlockMarkup = sponsorsMarkup ? `
+        <div class="detail-card sponsor-section" style="margin-top: var(--space-lg);">
+          <h3>Partner & Sponsoren</h3>
+          <div class="sponsor-grid">
+            ${sponsorsMarkup}
+          </div>
+        </div>
+      ` : '';
 
       container.innerHTML = `
-        <div class="candidate-layout">
-          <aside class="candidate-sidebar">
-            <span class="eyebrow">${event.category}</span>
-            <h1>${event.title}</h1>
-            <p class="text-lead" style="margin-top: var(--space-sm);">${event.description}</p>
-
-            <div class="candidate-meta" style="margin-top: var(--space-lg);">
-              <div class="meta-item">
-                <span class="meta-label">Datum</span>
-                <p>${formattedDate}</p>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Uhrzeit</span>
-                <p>${event.time}</p>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Ort</span>
-                <p>${event.location}</p>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Format</span>
-                <p>${event.format || 'Offener Austausch'}</p>
-              </div>
-            </div>
-
-            <div class="candidate-links">
-              <a href="${event.ticketUrl}">Zur Anmeldung</a>
-              <a href="events.html">Alle Events</a>
-            </div>
-          </aside>
+        <div class="candidate-layout" style="margin-top: var(--space-xs);">
+          <div class="candidate-left-stack">
+            ${leftColumnMarkup}
+            ${sponsorsBlockMarkup}
+          </div>
 
           <section class="candidate-content">
             <span class="eyebrow">Mehr zum Event</span>
             <h2>${event.title}</h2>
-            <p class="text-lead" style="margin-bottom: var(--space-lg);">${event.fullDescription || event.description}</p>
+            <div class="text-lead" style="margin-bottom: var(--space-lg);">${formattedFullDescription}</div>
 
             <div class="detail-list">
               ${highlightsMarkup}
