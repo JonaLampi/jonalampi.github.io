@@ -216,6 +216,11 @@ p {
   padding-inline: var(--space-md);
 }
 
+.container h1, h2 {
+  margin-bottom: var(--space-md);
+}
+
+
 .section {
   padding-block: var(--space-2xl);
 }
@@ -325,7 +330,7 @@ p {
 }
 
 .gallery-justified img {
-  height: 220px;
+  height: 275px;
   width: auto;
   flex-grow: 0;
   flex-shrink: 0;
@@ -337,7 +342,7 @@ p {
 }
 
 .gallery-justified .row-two{
-  height: 140px;
+  height: 105px;
   /* width: auto;
   flex-grow: 0.0;
   flex-shrink: 0;
@@ -447,9 +452,20 @@ p {
   padding: var(--space-xl);
 }
 
+.rotating-dinner-box {
+  grid-template-columns: 1.5fr 0.5fr;
+}
+
 @media (max-width: 720px) {
-  .running-dinner-box {
+  .running-dinner-box,
+  .rotating-dinner-box {
     grid-template-columns: 1fr;
+  }
+  .rotating-dinner-img {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
   }
 }
 
@@ -752,6 +768,10 @@ p {
   transform: translateY(-6px) scale(1.02);
   box-shadow: var(--shadow-hover);
   z-index: 2;
+}
+
+.card h2, h3 {
+  margin-bottom: var(--space-sm);
 }
 
 /* Karten bekommen beim Hover mehr Fokus statt einer Rotation. */
@@ -1091,6 +1111,7 @@ p {
 
 .hero-actions {
   display: flex;
+  /* justify-content: center; */
   flex-wrap: wrap;
   gap: var(--space-sm);
   margin-top: var(--space-lg);
@@ -1231,16 +1252,21 @@ p {
   border-radius: var(--radius-pill);
   background-color: var(--color-bg-alt);
   color: var(--color-petrol);
+  margin-bottom: var(--space-xs);
 }
 
 /* Zitat, z. B. Erfahrungsbericht auf der Community-Seite */
 .quote {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-style: italic;
   border-left: 4px solid var(--color-yellow);
   padding-left: var(--space-md);
-  margin-block: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.quote-card {
+  padding: var(--space-lg);
 }
 
 /* Statistik-Block, z. B. "1.240 Ehrenamtliche" auf der Startseite */
@@ -1335,3 +1361,4 @@ p {
     flex-direction: column;
   }
 }
+
