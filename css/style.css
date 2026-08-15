@@ -1269,6 +1269,10 @@ p {
   padding: var(--space-lg);
 }
 
+.about-person-card {
+  padding: var(--space-md);
+}
+
 /* Statistik-Block, z. B. "1.240 Ehrenamtliche" auf der Startseite */
 .stat {
   text-align: center;
