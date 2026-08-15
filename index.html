@@ -4,114 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="./">
-  <title>Berliner Salon — Ehrenamt in Berlin</title>
-  <meta name="description" content="Berliner Salon bringt Menschen und Ehrenamt in Berlin an einen Tisch: Projekte finden, spenden, Events besuchen, Community werden.">
+  <title>Berliner Salon — Jetzt ist die Zeit</title>
+  <meta name="description" content="Berliner Salon – Jetzt ist die Zeit. Ein Abend für Begegnung, Verantwortung und gesellschaftliches Handeln in Berlin.">
 
-  <!-- Google Fonts: Fraunces (Überschriften) + Space Grotesk (Fließtext) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Das gemeinsame Stylesheet für die ganze Website -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- ==========================================================
-       HEADER / NAVIGATION
-       Dieser Block ist auf jeder Unterseite identisch — nur die
-       Klasse "is-active" wandert jeweils zum aktuellen Menüpunkt.
-       Neue Unterseite hinzufügen? Einfach eine <li> ergänzen,
-       hier UND in den Kopien auf den anderen Seiten.
-       ========================================================== -->
   <header class="site-header">
     <nav class="nav container">
       <a href="index.html" class="nav-logo">Berliner <span>Salon</span></a>
-
-      <!-- Hamburger-Button, nur auf schmalen Bildschirmen sichtbar -->
       <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
       <ul class="nav-links">
         <li><a href="index.html" class="is-active">Start</a></li>
-        <li><a href="events.html">Events</a></li>
         <li><a href="tableCaptains.html">Table Captains</a></li>
+        <li><a href="about.html">Über uns</a></li>
       </ul>
     </nav>
   </header>
 
-
-  <!-- ==========================================================
-       HERO
-       Großer Aufmacher: Versprechen der Seite + zwei Haupt-Aktionen.
-       ========================================================== -->
   <section class="hero container">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Ehrenamt in Berlin</span>
-        <h1>Wo Berlin sich an einen Tisch setzt.</h1>
+        <span class="eyebrow">Berliner <span class="salon-word">Salon</span> • Jetzt ist die Zeit</span>
+        <h1>Vom Reden ins Handeln</h1>
         <p class="text-lead">
-          Berliner Salon bringt Menschen zusammen, die etwas bewegen wollen —
-          als Ehrenamtliche, Spender:innen oder Gäste. Finde ein Projekt,
-          das zu dir passt, und werde Teil einer wachsenden Nachbarschaft.
+          Viele gut ausgebildete Menschen möchten sich gesellschaftlich engagieren. Der Schritt vom guten Vorsatz zum konkreten Handeln gelingt ihnen aber oft nicht – nicht aus Gleichgültigkeit, sondern weil der Weg fehlt. Diese Brücke wollen wir an diesem Abend bauen.
         </p>
+        <div class="hero-actions">
+          <a href="https://luma.com/vsdv1z58" class="btn btn-primary">Tickets ab 20 €</a>
+          <a href="images/sitzplan.png" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Lageplan ansehen</a>
+        </div>
+        <div class="info-pills" aria-label="Eventdetails">
+          <span>30.09.2026</span>
+          <span>Französischer Dom</span>
+          <span>Rotating Dinner</span>
+        </div>
+        <p class="event-note">Offizieller Veranstalter: Ev. Akademie Berlin, die uns den Französischen Dom zur Verfügung stellt.</p>
       </div>
 
-      <!-- Signatur-Element der Seite: ein Tischgedeck von oben,
-           passend zum "Salon"-Gedanken — als reines, leichtes SVG. -->
-      <div class="hero-motif" aria-hidden="true">
-        <img src="icons/comeTogetherTable.svg" alt="" style="width: 100%; height: auto; display: block; opacity: 0.9;">
+      <div class="gallery-justified" aria-label="Impressionen vom Berliner Salon">
+        <img src="data/events/images/salon-jetzt-ist-die-zeit.jpg.avif" alt="Berliner Salon Abend im Französischen Dom">
+        <img src="images/table_closeup.jpeg" alt="Tischgespräch beim Berliner Salon">
+        <img src="images/table_captains.jpeg" alt="Table Captains im Austausch" class="row-two">
+        <img src="images/interior_wide.jpeg" alt="Blick in den Französischen Dom" class="row-two">
+        <img src="images/dom_outside.jpeg" alt="Der Französische Dom von außen" class="row-two">
       </div>
     </div>
   </section>
 
-
-
-  <!-- ==========================================================
-       SO FUNKTIONIERT'S
-       Eine echte Reihenfolge von Schritten — deshalb ist eine
-       Nummerierung hier sinnvoll (anders als bei reinen Deko-Zahlen).
-       ========================================================== -->
   <section class="section section-alt">
     <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">So funktioniert's</span>
-        <h2>Drei Schritte zum Mitmachen</h2>
+      <div class="section-head">
+        <span class="eyebrow">Warum wir da sind</span>
+        <h2>Ein Abend voller Begegnungen, die zum Handeln anregen.</h2>
       </div>
 
-      <div class="grid grid-3">
+      <div class="split-cta">
         <div class="card">
-          <span class="badge">Schritt 1</span>
-          <h3 style="margin-top: var(--space-sm);">Table Captains kennenlernen</h3>
-          <p>Komme zu einem unserer Salon Formate und lasse dich von unseren Table Captains für ihre Projekte begeistern.</p>
+          <p>Der Berliner Salon „Jetzt ist die Zeit“ ist ein Abend, der genau dieser Frage gewidmet ist: Wie können wir uns gemeinsam den drängenden Fragen unserer Zeit stellen? Die Antwort liegt nicht nur in Diskussionen, sondern in konkretem, gemeinsamem Handeln.</p>
         </div>
         <div class="card">
-          <span class="badge">Schritt 2</span>
-          <h3 style="margin-top: var(--space-sm);">Projekt finden</h3>
-          <p>Stöbere durch Projekte und Angebote aus Nachbarschaft, Bildung, Umwelt und Kultur — gefiltert nach Bezirk und Zeitaufwand.</p>
-        </div>
-        <div class="card">
-          <span class="badge">Schritt 3</span>
-          <h3 style="margin-top: var(--space-sm);">Platz nehmen</h3>
-          <p>Beim nächsten Event oder Einsatz bist du dabei — ganz ohne Vorerfahrung, mit Menschen, die genauso neugierig sind.</p>
+          <p>Über ein dreigängiges Menü hinweg wechseln die Gäste die Tische und kommen mit Menschen ins Gespräch, die Verantwortung übernommen haben – in Wissenschaft, Politik, Sozialer Arbeit, Kultur und Unternehmertum.</p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ==========================================================
-       Table Captain-VORSCHAU
-       Drei Beispiel-Karten, verlinkt auf die volle Übersichtsseite.
-       ========================================================== -->
   <section class="container section">
     <div class="section-head">
       <span class="eyebrow">Gesichter des Salons</span>
       <h2>Unsere Table Captains</h2>
-      <p class="text-lead">Sie bringen ihren Input aus verschiedensten Projekten mit und zeigen auf, was in der Zivilgesellschaft möglich ist. Von Ehrenamtlichen, über Sozialunternehmer:innen, bis zu Bundesminister:innen ist alles dabei.</p>
+      <p class="text-lead">Sie bringen ihren Input aus unterschiedlichen Projekten mit und zeigen auf, was in der Zivilgesellschaft möglich ist. Viele von ihnen sind Menschen, die Verantwortung übernommen haben und andere zum Mitmachen ermutigen.</p>
     </div>
 
-    <!-- Previously hardcoded placeholder cards. They are now replaced by the live preview below. -->
     <div class="grid grid-3" id="featured-table-captains"></div>
 
     <div style="text-align:center; margin-top: var(--space-xl);">
@@ -119,126 +88,190 @@
     </div>
   </section>
 
-
-  <!-- ==========================================================
-       NÄCHSTE EVENTS (Vorschau)
-       ========================================================== -->
   <section class="section section-alt">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Was ansteht</span>
-        <h2>Nächste Termine</h2>
+        <span class="eyebrow">Sponsoren und Unterstützer</span>
+        <h2>Mit Unterstützung entsteht der Abend.</h2>
       </div>
 
-      <div class="grid grid-2" id="upcoming-events"></div>
-
-      <div style="text-align:center; margin-top: var(--space-xl);">
-        <a href="events.html" class="btn btn-outline">Zum Eventkalender</a>
+      <div class="sponsor-grid">
+        <a href="https://i-potentials.de/">
+          <div class="sponsor-card">
+            <div class="sponsor-card-inner">
+              <img src="data/events/images/i-potentials-logo.png" alt="i-potentials">
+              <p>Manche Unterstützung beginnt mit Vertrauen: Constanze Buchheim war vor rund 15 Jahren Christians erster Coach. Als wir i-potentials heute gefragt haben, ob sie den Berliner Salon unterstützen möchten, war die Antwort von Constanze und Martina van Hettinga ebenso schnell wie unkompliziert: Wir sind dabei. Dafür sagen wir Danke.</p>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.meine-krankenkasse.de">
+          <div class="sponsor-card">
+          <div class="sponsor-card-inner">
+            <img src="data/events/images/mkk-logo.svg" alt="mkk">
+            <p>Diese Partnerschaft ist selbst ein kleines Stück Salonwirkung: Ein Gast der mkk beim ersten Berliner Salon nahm aus dem Abend eine konkrete Verbindung mit – und brachte anschließend eine Kooperation mit der Hacker School auf den Weg. Dass die mkk nun den zweiten Salon als Förderpartner unterstützt, freut uns deshalb besonders.</p>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div style="margin-top: var(--space-md); background: var(--color-card);" class="sponsor-card">
+        <div class="sponsor-card-inner">
+          <p>Dahinter steht auch eine gemeinsame Überzeugung: Gesellschaftliches Engagement schafft Verbindung und Teilhabe – und soziale Verbundenheit ist auch eine wichtige Ressource für Gesundheit und Prävention.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Wie kann ich helfen?</span>
+        <h2>Es gibt viele Wege, mitzuwirken.</h2>
+      </div>
 
+      <div class="help-grid">
+        <div class="card help-card">
+          <span class="badge">Sponsoren</span>
+          <h3>Sponsortickets</h3>
+          <p>Unterstütze den Abend finanziell durch das Supporterticket (ab 130€) und ermögliche Menschen den Besuch, die sonst nicht teilnehmen könnten.</p>
+          <a href="https://luma.com/vsdv1z58" class="text-link">Tickets</a>
+        </div>
+        <div class="card help-card">
+          <span class="badge">Organisieren</span>
+          <h3>Ehrenamtlich in die Orga</h3>
+          <p>Du bist überzeugt vom grundlegenden Konstept und willst uns helfen es auszugestalten? Melde dich gerne bei uns via <a href="mailto:info@berlinersalon.org" class="inline-link"> Mail</a> oder schau dir unsere <a href="https://goodjobs.eu/jobs/founders-associate-praktikum-community-salons-social-impact-gn-berliner-salon-community" class="inline-link">Praktikumsstelle</a> an.</p>
+        </div>
+        <div class="card help-card">
+          <span class="badge">Raum</span>
+          <h3>Running Dinner: Küche zur Verfügung stellen</h3>
+          <p>Nach dem Salon geht es weiter. Stelle Deine Küche zur Verfügung und hoste Gäste aus den Salons für einen Gang. Melde dich gerne via: <a href="mailto:info@berlinersalon.org" class="inline-link"> info@berlinersalon.org</a></p>
+          <a href="index.html#running-dinner" class="text-link">Mehr Infos</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- ==========================================================
-       FOOTER
-       Wie der Header auf jeder Seite identisch.
-       ========================================================== -->
+  <section class="section section-alt">
+    <div class="container" id="running-dinner">
+      <div class="section-head center">
+        <span class="eyebrow">Was kommt als Nächstes?</span>
+        <h2>Running Dinner: Von WG-Küche zum Speisesaal</h2>
+      </div>
+      <div class="running-dinner-box">
+        <div class="running-dinner-copy">
+          <p>Nach dem Salon wollen wir die Begegnung nicht enden lassen. Deshalb planen wir ein offenes Running Dinner mit kleinen Gruppen in Euren Küchen: Drei Gänge, jedes Mal neue Menschen, in eurem Kiez. In zweier Paarungen trefft ihr zu jedem Gang zwei anderen Teams, wobei eines der drei Teams den Gang hostet. Danach findet sich jedes Team für den nächsten Gang wieder mit neuen zweier Paarungn in der Nähe zusammen.</p>
+          <p>Unser Ziel: Möglichst verschiedene Menschen zusammenbringen und durch die drei Gänge von der Fragestelltung <i>"Was beeindruckt/stört uns?"</i> zu <i>"Wie werden wir sechs nun handeln?"</i> zu kommen. Es kann also gut sein, dass Du beim ersten Gang auf einer Bierkiste sitzt und beim nächsten im Designer-Stuhl. Das ist das Ziel – von der Diversität der Gruppe zu profitieren – Wer hat Zeit? Wer hat finanzielle Mittel?</p>
+          <p>Wenn Du ein einen Tisch oder eine ruhige, einladende Ecke zur Verfügung stellen willst, freuen wir uns über erste unverbindliche Rückmeldnug unter: <a href="mailto:running-dinner@berlinersalon.org" class="inline-link">running-dinner@berlinersalon.org</a>. Dies hilft uns die Umsetzbarkeit des Events zu evaluieren.</p>
+          <p>Weiter Infos und Einladung folgen.</p>
+          <div class="info-pills" aria-label="Eventdetails">
+            <span>17.10.2026</span>
+            <span>Running Dinner</span>
+          </div>
+        </div>
+
+        <div class="running-dinner-gallery">
+          <img src="images/wg_kitchen_2.jpg" alt="WG Küche">
+          <img src="images/fancy_dinner.jpg" alt="Schickes Abendessen">
+        </div>
+      </div>
+    </div>
+  </section>  
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <h4>Berliner Salon</h4>
-          <p style="color:#D8D2C4; max-width: 32ch;">
-            Eine Plattform, die Berliner:innen und ehrenamtliche
-            Projekte an einen Tisch bringt.
-          </p>
+          <p>Ein Abend, der Menschen zusammenbringt und sie vom Reden ins Handeln führt.</p>
         </div>
         <div>
           <h4>Seite</h4>
+          <a href="index.html">Start</a>
           <a href="tableCaptains.html">Table Captains</a>
-          <a href="events.html">Events</a>
+          <a href="about.html">Über uns</a>
         </div>
         <div>
           <h4>Kontakt</h4>
-          <a href="mailto:hallo@berlinersalon.org">hallo@berlinersalon.org</a>
-          <a href="#">Instagram</a>
-          <a href="#">Newsletter</a>
+          <a href="mailto:info@berlinersalon.org">info@berlinersalon.org</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Berliner Salon</span>
-        <span>Impressum · Datenschutz</span>
+        <!-- <span>Impressum · Datenschutz</span> -->
       </div>
     </div>
   </footer>
 
   <script src="js/tableCaptainData.js"></script>
-  <script src="data/tableCaptains/clara.js"></script>
-  <script src="data/tableCaptains/muska.js"></script>
-  <script src="data/tableCaptains/luca.js"></script>
-  <script src="js/eventData.js"></script>
-  <script src="data/events/salon-china-conversations.js"></script>
-  <script src="data/events/salon-gutes-leadership.js"></script>
-  <script src="data/events/salon-jetzt-ist-die-zeit.js"></script>
-  <script src="data/events/salon-ki-gesellschaft.js"></script>
+  <script src="data/tableCaptains/andreas_toelke.js"></script>
+  <script src="data/tableCaptains/anna_alex.js"></script>
+  <script src="data/tableCaptains/anne_gidion.js"></script>
+  <script src="data/tableCaptains/bernd_roggendorf.js"></script>
+  <script src="data/tableCaptains/burcu_arslan.js"></script>
+  <script src="data/tableCaptains/carl_muehlbach.js"></script>
+  <script src="data/tableCaptains/christian_luhmann.js"></script>
+  <script src="data/tableCaptains/christiana_bukalo.js"></script>
+  <script src="data/tableCaptains/clara_braeuer.js"></script>
+  <script src="data/tableCaptains/claus_weselsky.js"></script>
+  <script src="data/tableCaptains/dervis_hizarci.js"></script>
+  <script src="data/tableCaptains/eva-mariamccormack.js"></script>
+  <script src="data/tableCaptains/fabian_westerheide.js"></script>
+  <script src="data/tableCaptains/felix_oldenburg.js"></script>
+  <script src="data/tableCaptains/florian_westphal.js"></script>
+  <script src="data/tableCaptains/fritz_von-korff.js"></script>
+  <script src="data/tableCaptains/hadi_al_khatib.js"></script>
+  <script src="data/tableCaptains/isabell_koschnitzke.js"></script>
+  <script src="data/tableCaptains/janna_schweigmann.js"></script>
+  <script src="data/tableCaptains/jeannette_gusko.js"></script>
+  <script src="data/tableCaptains/jonas_leve.js"></script>
+  <script src="data/tableCaptains/joshua_steib.js"></script>
+  <script src="data/tableCaptains/julia_freudenberg.js"></script>
+  <script src="data/tableCaptains/jutta_bodem-schroetgens.js"></script>
+  <script src="data/tableCaptains/kai_lanz.js"></script>
+  <script src="data/tableCaptains/kai_monheim.js"></script>
+  <script src="data/tableCaptains/karin_heinzl.js"></script>
+  <script src="data/tableCaptains/kristina_kroemer.js"></script>
+  <script src="data/tableCaptains/lara_buschmann.js"></script>
+  <script src="data/tableCaptains/luca_piwodda.js"></script>
+  <script src="data/tableCaptains/luise_pusch.js"></script>
+  <script src="data/tableCaptains/marc_unkelbach.js"></script>
+  <script src="data/tableCaptains/maximilian_oehl.js"></script>
+  <script src="data/tableCaptains/muska_ahmadsei.js"></script>
+  <script src="data/tableCaptains/nina_horre.js"></script>
+  <script src="data/tableCaptains/paolo_stolpmann.js"></script>
+  <script src="data/tableCaptains/patrizia_casagranda.js"></script>
+  <script src="data/tableCaptains/sabine_werth.js"></script>
+  <script src="data/tableCaptains/saskia_sefranek.js"></script>
+  <script src="data/tableCaptains/shammi_haque.js"></script>
+  <script src="data/tableCaptains/sidonie_fernau.js"></script>
+  <script src="data/tableCaptains/stefan_bernickel.js"></script>
+  <script src="data/tableCaptains/steffen_mau.js"></script>
+  <script src="data/tableCaptains/till_wahnbaeck.js"></script>
+  <script src="data/tableCaptains/tini_diekmann.js"></script>
+  <script src="data/tableCaptains/ulf_buermeyer.js"></script>
+  <script src="data/tableCaptains/volker_wissing.js"></script>
+  <script src="data/tableCaptains/wolfgang_gruendinger.js"></script>
   <script>
     function renderFeaturedTableCaptains() {
       const container = document.getElementById('featured-table-captains');
       if (!container) return;
 
-      container.innerHTML = getFeaturedTableCaptains().map((person, index) => {
-        // const tiltClass = index % 3 === 0 ? 'card--tilt-left' : index % 3 === 2 ? 'card--tilt-right' : '';
-        return `
-          <a class="card person-card" href="tableCaptainPortrait.html?id=${person.id}">
-            <div class="person-avatar" style="background-color:#F5B921;">
-              <img src="data/tableCaptains/images/${person.picture}" alt="${person.name}">
-            </div>
-            <h3>${person.name}</h3>
-            <p style="color: var(--color-ink-soft);">${person.shortDescription}</p>
-            <span class="person-table">Tisch ${person.table || 'XX'}</span>
-          </a>
-        `;
-      }).join('');
+      container.innerHTML = getFeaturedTableCaptains().map((person) => `
+        <a class="card person-card" href="tableCaptainPortrait.html?id=${person.id}">
+          <div class="person-avatar" style="background-color: var(--color-primary-light);">
+            <img src="data/tableCaptains/images/${person.picture}" alt="${person.name}">
+          </div>
+          <h3>${person.name}</h3>
+          <p style="color: var(--color-ink-soft);">${person.shortDescription}</p>
+          <div class="tags" style="margin-top: var(--space-sm);">
+            ${person.tags?.company ? `<span class="tag company"><img src="icons/company.svg" alt="Organisation" class="icon"> ${person.tags.company}</span>` : ''}
+            ${person.tags?.event ? `<span class="tag event"><img src="icons/calendar.svg" alt="Event" class="icon"> ${person.tags.event}</span>` : ''}
+          </div>
+        </a>
+      `).join('');
     }
 
-    function renderUpcomingEvents() {
-      const container = document.getElementById('upcoming-events');
-      if (!container) return;
-
-      const events = getUpcomingEvents(4);
-      container.innerHTML = events.map(event => {
-        const date = new Date(event.date);
-        const day = date.getDate().toString().padStart(2, '0');
-        const month = date.toLocaleDateString('de-DE', { month: 'short' }).replace('.', '');
-
-        return `
-          <a class="card event-card" href="eventPortrait.html?id=${event.id}">
-            <div class="event-date">
-              <span class="day">${day}</span>
-              <span class="month">${month}</span>
-            </div>
-            <div>
-              <span class="badge">${event.category}</span>
-              <h3 style="margin-top: var(--space-xs);">${event.title}</h3>
-              <p style="color: var(--color-ink-soft); margin-block: 4px;">${event.location} · ${event.time}</p>
-              <p>${event.description}</p>
-              <span href="tickets.html" class="btn btn-outline" style="margin-top: var(--space-sm);">Zum Ticket</span>
-            </div>
-          </a>
-        `;
-      }).join('');
-    }
-
-    // <span class="btn btn-secondary" style="margin-top: var(--space-sm);">Zum Ticket</span>
-
-    document.addEventListener('DOMContentLoaded', () => {
-      renderFeaturedTableCaptains();
-      renderUpcomingEvents();
-    });
+    document.addEventListener('DOMContentLoaded', renderFeaturedTableCaptains);
   </script>
-
-  <!-- Kleines JS nur für das mobile Hamburger-Menü -->
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 const TABLECAPTAIN = [];
 
 // Change this list to choose which table captains appear in the homepage preview.
-const FEATURED_TABLE_CAPTAINS = ['clara', 'muska', 'luca'];
+const FEATURED_TABLE_CAPTAINS = ['christiana_bukalo', 'kai_lanz', 'sabine_werth'];
 
 // Helper function to get a person by ID (filename without .js)
 function getTableCaptainById(id) {

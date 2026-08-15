@@ -6,9 +6,54 @@
   <base href="./">
 
   <script src="js/tableCaptainData.js"></script>
-  <script src="data/tableCaptains/clara.js"></script>
-  <script src="data/tableCaptains/muska.js"></script>
-  <script src="data/tableCaptains/luca.js"></script>
+  <script src="data/tableCaptains/andreas_toelke.js"></script>
+  <script src="data/tableCaptains/anna_alex.js"></script>
+  <script src="data/tableCaptains/anne_gidion.js"></script>
+  <script src="data/tableCaptains/bernd_roggendorf.js"></script>
+  <script src="data/tableCaptains/burcu_arslan.js"></script>
+  <script src="data/tableCaptains/carl_muehlbach.js"></script>
+  <script src="data/tableCaptains/christian_luhmann.js"></script>
+  <script src="data/tableCaptains/christiana_bukalo.js"></script>
+  <script src="data/tableCaptains/clara_braeuer.js"></script>
+  <script src="data/tableCaptains/claus_weselsky.js"></script>
+  <script src="data/tableCaptains/dervis_hizarci.js"></script>
+  <script src="data/tableCaptains/eva-mariamccormack.js"></script>
+  <script src="data/tableCaptains/fabian_westerheide.js"></script>
+  <script src="data/tableCaptains/felix_oldenburg.js"></script>
+  <script src="data/tableCaptains/florian_westphal.js"></script>
+  <script src="data/tableCaptains/fritz_von-korff.js"></script>
+  <script src="data/tableCaptains/hadi_al_khatib.js"></script>
+  <script src="data/tableCaptains/isabell_koschnitzke.js"></script>
+  <script src="data/tableCaptains/janna_schweigmann.js"></script>
+  <script src="data/tableCaptains/jeannette_gusko.js"></script>
+  <script src="data/tableCaptains/jonas_leve.js"></script>
+  <script src="data/tableCaptains/joshua_steib.js"></script>
+  <script src="data/tableCaptains/julia_freudenberg.js"></script>
+  <script src="data/tableCaptains/jutta_bodem-schroetgens.js"></script>
+  <script src="data/tableCaptains/kai_lanz.js"></script>
+  <script src="data/tableCaptains/kai_monheim.js"></script>
+  <script src="data/tableCaptains/karin_heinzl.js"></script>
+  <script src="data/tableCaptains/kristina_kroemer.js"></script>
+  <script src="data/tableCaptains/lara_buschmann.js"></script>
+  <script src="data/tableCaptains/luca_piwodda.js"></script>
+  <script src="data/tableCaptains/luise_pusch.js"></script>
+  <script src="data/tableCaptains/marc_unkelbach.js"></script>
+  <script src="data/tableCaptains/maximilian_oehl.js"></script>
+  <script src="data/tableCaptains/muska_ahmadsei.js"></script>
+  <script src="data/tableCaptains/nina_horre.js"></script>
+  <script src="data/tableCaptains/paolo_stolpmann.js"></script>
+  <script src="data/tableCaptains/patrizia_casagranda.js"></script>
+  <script src="data/tableCaptains/sabine_werth.js"></script>
+  <script src="data/tableCaptains/saskia_sefranek.js"></script>
+  <script src="data/tableCaptains/shammi_haque.js"></script>
+  <script src="data/tableCaptains/sidonie_fernau.js"></script>
+  <script src="data/tableCaptains/stefan_bernickel.js"></script>
+  <script src="data/tableCaptains/steffen_mau.js"></script>
+  <script src="data/tableCaptains/till_wahnbaeck.js"></script>
+  <script src="data/tableCaptains/tini_diekmann.js"></script>
+  <script src="data/tableCaptains/ulf_buermeyer.js"></script>
+  <script src="data/tableCaptains/volker_wissing.js"></script>
+  <script src="data/tableCaptains/wolfgang_gruendinger.js"></script>
 
   <title>Eventkalender — Berliner Salon</title>
   <meta name="description" content="Alle Termine und Veranstaltungen von Berliner Salon auf einen Blick.">
@@ -26,13 +71,13 @@
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Start</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="tableCaptains.html">Table Captains</a></li>
+        <li><a href="tableCaptains.html" class="is-active">Table Captains</a></li>
+        <li><a href="about.html">Über uns</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container section">
+  <main class="container section" style="padding-block: var(--space-lg) var(--space-xl);">
     <div id="detail-container"></div>
   </main>
 
@@ -41,23 +86,22 @@
       <div class="footer-grid">
         <div>
           <h4>Berliner Salon</h4>
-          <p style="color:#D8D2C4; max-width: 32ch;">Eine Plattform, die Berliner:innen und ehrenamtliche Projekte an einen Tisch bringt.</p>
+          <p>Ein Abend, der Menschen zusammenbringt und sie vom Reden ins Handeln führt.</p>
         </div>
         <div>
           <h4>Seite</h4>
+          <a href="index.html">Start</a>
           <a href="tableCaptains.html">Table Captains</a>
-          <a href="events.html">Events</a>
+          <a href="about.html">Über uns</a>
         </div>
         <div>
           <h4>Kontakt</h4>
-          <a href="mailto:hallo@berlinersalon.org">hallo@berlinersalon.org</a>
-          <a href="#">Instagram</a>
-          <a href="#">Newsletter</a>
+          <a href="mailto:info@berlinersalon.org">info@berlinersalon.org</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Berliner Salon</span>
-        <span>Impressum · Datenschutz</span>
+        <!-- <span>Impressum · Datenschutz</span> -->
       </div>
     </div>
   </footer>
@@ -79,6 +123,8 @@
             return;
         }
 
+        const hasOrg = person.tags?.company && person.tags.company.trim() !== '';
+
         document.getElementById('detail-container').innerHTML = `
           <div class="candidate-layout">
             <aside class="candidate-sidebar">
@@ -86,12 +132,14 @@
               <div class="candidate-meta">
                 <div class="meta-item">
                   <span class="meta-label">Name</span>
-                  <h1>${person.name}</h1>
+                  <h2>${person.name}</h2>
                 </div>
+                ${hasOrg ? `
                 <div class="meta-item">
                   <span class="meta-label">Organisation</span>
                   <p>${person.tags.company}</p>
                 </div>
+                ` : ''}
                 <div class="meta-item">
                   <span class="meta-label">Event</span>
                   <p>${person.tags.event}</p>
@@ -115,10 +163,30 @@
               <span class="eyebrow">Table Captain</span>
               <h2>${person.name}</h2>
               <p class="text-lead" style="margin-bottom: var(--space-md);">${person.shortDescription}</p>
-              <div class="full-text">${(person.fullText || '')
+              <div class="full-text">${(person.description || '')
                 .replace(/\r\n/g, '\n')
                 .replace(/\n{3,}/g, '\n\n')
-                .replace(/\n/g, '<br>')}</div>
+                .replace(/\n/g, '<br>')}
+              </div>
+              <h3 style="margin-top: var(--space-md);">Was mich antreibt</h3>
+              <div class="full-text">${(person.whatDrivesMe || '')
+                .replace(/\r\n/g, '\n')
+                .replace(/\n{3,}/g, '\n\n')
+                .replace(/\n/g, '<br>')}
+              </div>
+              <h3 style="margin-top: var(--space-md);">Warum gerade jetzt?</h3>
+              <div class="full-text">${(person.whyNow || '')
+                .replace(/\r\n/g, '\n')
+                .replace(/\n{3,}/g, '\n\n')
+                .replace(/\n/g, '<br>')}
+              </div>
+              <h3 style="margin-top: var(--space-md);">Komme an meinen Tisch, wenn ...</h3>
+              <div class="full-text">${(person.joinMyTable || '')
+                .replace(/\r\n/g, '\n')
+                .replace(/\n{3,}/g, '\n\n')
+                .replace(/\n/g, '<br>')}
+              </div>
+              
             </section>
           </div>
         `;

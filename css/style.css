@@ -29,20 +29,24 @@
    statt an 50 Stellen im Code zu suchen.
    -------------------------------------------------------------------------- */
 :root {
-  /* Farben — warmer, freundlicher Grundton mit Gelb als Hauptfarbe.
-     "petrol" ist die zweite Akzentfarbe (für Links, Fokus, Kontraste) —
-     angelehnt an Berliner Bäderkultur / Bauhaus-Farbwelten, ergänzt Gelb
-     ruhiger als z. B. ein weiteres warmes Orange es täte. */
-  --color-bg: #FFFBF2;          /* warmes Creme-Weiß — Seitenhintergrund */
-  --color-bg-alt: #FFF3D6;      /* helles Butter-Gelb — Abschnitts-Hintergrund */
-  --color-card: #FFFFFF;        /* Karten-Hintergrund, hebt sich von Creme ab */
-  --color-ink: #2B2620;         /* warmes Fast-Schwarz für Fließtext */
-  --color-ink-soft: #6B6153;    /* gedämpfter Text (Nebeninfos, Captions) */
-  --color-yellow: #F5B921;      /* Hauptfarbe: warmes, kräftiges Gelb */
-  --color-yellow-deep: #D99A00; /* dunkleres Gelb für Hover-Zustände */
-  --color-petrol: #2F5D62;      /* Zweitfarbe: gedecktes Petrol/Blaugrün */
-  --color-petrol-deep: #234649; /* dunkleres Petrol für Hover-Zustände */
-  --color-line: #EADFC0;        /* zarte Rahmen-/Trennlinien */
+  --color-bg: #f7f4ee;
+  --color-bg-alt: #f3eadb;
+  --color-card: #ffffff;
+  --color-ink: #17415c;
+  --color-ink-soft: #4b6777;
+  --color-accent: #e27426;
+  --color-accent-soft: #4f929c;
+  --color-accent-deep: #3d7a82;
+  --color-primary: #e27426;
+  --color-primary-deep: #c8611c;
+  --color-primary-light: #ebb988;
+  --color-secondary: #4f929c;
+  --color-secondary-deep: #3d7a82;
+  --color-line: #d8d9d2;
+  --color-yellow: #e27426;
+  --color-yellow-deep: #c8611c;
+  --color-petrol: #17415c;
+  --color-petrol-deep: #102f45;
 
   /* Schriften — zwei bewusst unterschiedliche Schriftfamilien:
      Fraunces = Display-Schrift (Serife mit Charakter) für Überschriften,
@@ -59,6 +63,14 @@
   --space-xl: 4rem;
   --space-2xl: 6rem;
 
+  @media (max-width: 760px) {
+    --space-xs: 0.3rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.75rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+  }
   /* Rundungen — "leicht abgerundet, dynamisch" ist der Wunsch-Look.
      Karten bekommen großzügige, aber nicht komplett runde Ecken. */
   --radius-sm: 12px;
@@ -187,6 +199,11 @@ p {
   margin-bottom: var(--space-sm);
 }
 
+.eyebrow .salon-word,
+.nav-logo span {
+  color: var(--color-accent);
+}
+
 
 /* --------------------------------------------------------------------------
    4. LAYOUT-HILFSKLASSEN
@@ -219,12 +236,274 @@ p {
   text-align: center;
 }
 
+.info-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.info-pills span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: rgba(23, 65, 92, 0.08);
+  border: 1px solid var(--color-line);
+  color: var(--color-ink);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/*
+.hero-collage {
+  display: grid;
+  grid-template-columns: 1.5fr 1.6fr 1.2fr;
+  grid-template-rows: minmax(180px, 1fr) minmax(150px, 1fr);
+  gap: 0.9rem;
+  align-self: stretch;
+  padding: 0.5rem 0;
+  min-height: 430px;
+}
+
+.hero-collage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 26px;
+  border: 2px solid var(--color-line);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-collage .collage-square {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  aspect-ratio: 1 / 1;
+}
+
+.hero-collage .collage-landscape {
+  aspect-ratio: 16 / 9;
+}
+
+.hero-collage .collage-landscape-1 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.hero-collage .collage-landscape-2 {
+  grid-column: 1;
+  grid-row: 2;
+  aspect-ratio: 4 / 3;
+}
+
+.hero-collage .collage-landscape-3 {
+  grid-column: 2;
+  grid-row: 2;
+  aspect-ratio: 4 / 3;
+}
+
+.hero-collage .collage-portrait {
+  grid-column: 3;
+  grid-row: 2 / span 2;
+  aspect-ratio: 3 / 5;
+} 
+*/
+
+/* --------------------------------------------------------------------------
+   GALERIE — Justified Rows
+   Organische Bildergalerie mit gemischten Formaten (Hoch-, Quer- und
+   Quadratformat). Jedes Bild behält sein natürliches Seitenverhältnis;
+   die Zeilenhöhe ist fix, die Breite wird automatisch berechnet
+   (kein manuelles Grid-Placement wie bei .hero-collage nötig).
+   -------------------------------------------------------------------------- */
+.gallery-justified {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.gallery-justified img {
+  height: 220px;
+  width: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 2px solid var(--color-primary-light);
+  box-shadow: var(--shadow-soft);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.gallery-justified .row-two{
+  height: 140px;
+  /* width: auto;
+  flex-grow: 0.0;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-soft);
+  transition: transform 220ms ease, box-shadow 220ms ease; */
+}
+
+.gallery-justified img:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+@media (max-width: 760px) {
+  .gallery-justified img {
+    height: 140px;
+  }
+}
+
+.event-note {
+  margin-top: 1.25rem;
+  max-width: 42ch;
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+}
+
+.split-cta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.help-card {
+  min-height: 100%;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: var(--space-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.inline-link {
+  display: inline-flex;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.sponsor-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.sponsor-intro {
+  background: var(--color-card);
+}
+
+.sponsor-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  min-height: 100%;
+}
+
+.sponsor-card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9rem;
+  height: 100%;
+  padding: var(--space-lg);
+}
+
+.sponsor-card-inner img {
+  max-height: 68px;
+  width: auto;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+.sponsor-card-inner p {
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.running-dinner-box {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--space-xl);
+  align-items: center;
+  background: rgba(255,255,255,0.35);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+@media (max-width: 720px) {
+  .running-dinner-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+.running-dinner-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.running-dinner-copy p {
+  color: var(--color-ink-soft);
+}
+
+.running-dinner-gallery {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.running-dinner-gallery img {
+  width: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 2px solid var(--color-line);
+  box-shadow: var(--shadow-soft);
+}
+
+.group-block {
+  margin-bottom: var(--space-xl);
+}
+
+.group-header {
+  margin-bottom: var(--space-lg);
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-line), transparent);
+  margin: var(--space-xl) 0;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--color-ink-soft);
+}
+
 /* Einfaches, responsives Karten-Raster.
    auto-fit + minmax = die Spaltenzahl passt sich automatisch der
    verfügbaren Breite an, ganz ohne Media Queries. */
 .grid {
   display: grid;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
@@ -236,16 +515,70 @@ p {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
 @media (max-width: 900px) {
   .grid-2,
-  .grid-3 {
+  .grid-3,
+  .grid-4,
+  .help-grid,
+  .split-cta,
+  .sponsor-showcase {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 }
 
 @media (max-width: 720px) {
-  .grid-2 {
+  .grid-2 ,
+  .split-cta {
     grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-collage {
+    position: relative;
+    display: block;
+    min-height: 420px;
+    padding: 0;
+  }
+
+  .hero-collage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: hero-fade 20s infinite;
+    object-fit: cover;
+  }
+
+  .hero-collage .collage-square,
+  .hero-collage .collage-landscape,
+  .hero-collage .collage-portrait {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-collage img:nth-child(1) { animation-delay: 0s; }
+  .hero-collage img:nth-child(2) { animation-delay: 4s; }
+  .hero-collage img:nth-child(3) { animation-delay: 8s; }
+  .hero-collage img:nth-child(4) { animation-delay: 12s; }
+  .hero-collage img:nth-child(5) { animation-delay: 16s; }
+}
+
+@keyframes hero-fade {
+  0%, 18% {
+    opacity: 1;
+  }
+  20%, 100% {
+    opacity: 0;
   }
 }
 
@@ -278,7 +611,7 @@ p {
 }
 
 .nav-logo span {
-  color: var(--color-yellow-deep);
+  color: var(--color-accent);
 }
 
 .nav-links {
@@ -346,7 +679,7 @@ p {
 
 .btn-primary {
   background-color: var(--color-yellow);
-  color: var(--color-ink);
+  color: #fff;
   box-shadow: var(--shadow-soft);
 }
 
@@ -513,7 +846,7 @@ p {
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: var(--space-md);
-  border: 4px solid var(--color-yellow);
+  border: 4px solid var(--color-primary-light);
 }
 
 .candidate-meta {
@@ -646,7 +979,8 @@ p {
 
 .sponsor-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  /* align-items: center; */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-md);
   margin-top: var(--space-sm);
 }
@@ -655,7 +989,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 88px;
+  /*min-height: 88px;*/
   padding: var(--space-sm);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
@@ -671,11 +1005,17 @@ p {
 
 .sponsor-card img {
   display: block;
-  max-width: 100%;
+  max-width: 65%;
   max-height: 56px;
   width: auto;
   height: auto;
   object-fit: contain;
+}
+
+@media (max-width: 720px) {
+  .sponsor-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .event-date {
@@ -738,7 +1078,7 @@ p {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: var(--space-xl);
   align-items: center;
 }
@@ -823,7 +1163,7 @@ p {
   background-color: var(--color-ink);
   color: var(--color-bg);
   padding-block: var(--space-xl) var(--space-lg);
-  margin-top: var(--space-2xl);
+  /* margin-top: var(--space-2xl); */
 }
 
 .footer-grid {
@@ -857,6 +1197,13 @@ p {
 
 .footer-grid a:hover {
   color: var(--color-yellow);
+}
+
+.footer-grid p {
+  display: block;
+  color: #D8D2C4;
+  padding-block: 4px;
+  transition: color 0.2s ease;
 }
 
 .footer-bottom {
